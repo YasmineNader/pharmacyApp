@@ -1,0 +1,106 @@
+<app-admin-navbar></app-admin-navbar>
+
+
+<div class="container adminContainer">
+
+    <h3 class="formTitle">Suppliers Form</h3>
+    <h6 *ngIf="msg !='' ">{{msg?.message}}</h6>
+
+    <form class="registerForm" [formGroup]="suppliers" (ngSubmit)="addSupplier()">
+     
+<div class=" row">
+<div class="form-group mb-4 col-md-6">
+            
+ <input type="text" id="firstName"  formControlName="supplier_first_name" placeholder="First Name" class="form-control"  >
+
+ <div *ngIf="isSubmitted||(supplier_first_name?.invalid && (supplier_first_name?.dirty || supplier_first_name?.touched))">
+    <ul class="inputError mt-1">
+        <li *ngIf="supplier_first_name?.errors?.['required']">First Name is Required</li>
+        <li *ngIf="supplier_first_name?.errors?.['minlength']">First Name less than 3 char</li>
+        <li *ngIf="supplier_first_name?.errors?.['maxlength']">First Name Exceeds 20 char</li>
+    </ul>
+
+</div>
+
+</div> 
+
+<div class=" form-group mb-4 col-md-6">
+    <input type="text" id="middleName"  formControlName="supplier_middle_name" placeholder="Middle Name" class="form-control"  >
+    <div *ngIf="isSubmitted||(supplier_middle_name?.invalid && (supplier_middle_name?.dirty || supplier_middle_name?.touched))">
+        <ul class="inputError mt-1">
+            <li *ngIf="supplier_middle_name?.errors?.['required']">Middle Name is Required</li>
+            <li *ngIf="supplier_middle_name?.errors?.['minlength']">Middle Name less than 3 char</li>
+            <li *ngIf="supplier_middle_name?.errors?.['maxlength']">Middle Name Exceeds 20 char</li>
+        </ul>
+    
+    </div>
+
+</div>
+
+
+
+</div>
+
+
+
+<div  class=" row">
+ <div  class=" form-group mb-4 col-md-6">
+    
+    <div class=" form-group mb-4">
+        <input type="text" id="lastName" formControlName="supplier_last_name" placeholder="Last Name"
+        class="form-control"  >
+        <div *ngIf="isSubmitted||(supplier_last_name?.invalid && (supplier_last_name?.dirty || supplier_last_name?.touched))">
+            <ul class="inputError mt-1">
+                <li *ngIf="supplier_last_name?.errors?.['required']">Last Name is Required</li>
+                <li *ngIf="supplier_last_name?.errors?.['minlength']">Last Name less than 3 char</li>
+                <li *ngIf="supplier_last_name?.errors?.['maxlength']">Last Name Exceeds 20 char</li>
+            </ul>
+        
+        </div>
+    </div>
+        
+        </div>
+
+
+
+        <div  class=" form-group mb-4 col-md-6">
+    
+            <div class=" form-group mb-4">
+                <input type="text" id="phone" formControlName="supplier_aphone1" placeholder="Phone"
+                class="form-control"  >
+                <div *ngIf="isSubmitted||(supplier_aphone1?.invalid && (supplier_aphone1?.dirty || supplier_aphone1?.touched))">
+                    <ul class="inputError mt-1">
+                        <li *ngIf="supplier_aphone1?.errors?.['required']">Phone is Required</li>
+                        <li *ngIf="supplier_aphone1?.errors?.['pattern']">Invalid Phone</li>
+                      
+                    </ul>
+                
+                </div>
+            </div>
+                
+                </div>
+        </div>
+        
+ 
+        
+        
+        <div  class=" form-group mb-4 col-md-6">
+            <div class="form-group mb-4">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Address" formControlName="supplier_address"></textarea>
+              </div>
+          <div *ngIf="isSubmitted||(supplier_address?.invalid && (supplier_address?.dirty || supplier_address?.touched))">
+            <ul class="inputError mt-1">
+                <li *ngIf="supplier_address?.errors?.['required']">Address is Required</li>
+                <li *ngIf="supplier_address?.errors?.['minlength']">Address less than 3 char</li>
+                <li *ngIf="supplier_address?.errors?.['maxlength']">Address Exceeds 30 char</li>
+              
+            </ul>
+        
+        </div>
+        </div>
+        
+        <div><button type="submit" class="btn btn-primary  btnAdd">Add</button></div>
+    </form>
+    </div>
+
+    <app-admin-footer></app-admin-footer>

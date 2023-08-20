@@ -1,0 +1,70 @@
+<!-- <div style="position: relative;height: 300px;
+width: 100%;">
+<img class="img-responsive"  src="assets/images/dr11.png" alt="" style="height: 300px;width: 100%;
+object-fit: cover;
+object-position: top;    filter: brightness(50%);">
+
+<div style="position: absolute;
+top: 0%;
+display: flex;
+justify-content: center;
+height: 300px;
+align-items: center;
+width: 100%;">
+<h1 style="    
+color: white;">purchase Order</h1>
+
+
+</div>
+
+</div>
+
+<div style="display: none; text-align: center; margin-top: 70px;" class="animation">      
+  <span class="screenLoader"></span>
+</div>
+
+<div class="container purchaseT" style="margin-bottom: 100px;" *ngIf="orderData != '' else other_content">
+
+
+    <table class="table purchaseRequest">
+        <thead>
+          <tr >
+            <th>Order ID</th>
+            <th>Supplier</th>
+            <th >Drug Count</th>
+            <th>Invoice Number</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+        
+          <tr *ngFor="let Data of orderData | paginate:{itemsPerPage: tableSize,currentPage:page,totalItems:count}; let i=index">
+            <td>{{Data?.order_id}}</td>
+            <td>{{Data?.supplier_id.supplier_first_name}}</td>
+            <td>{{Data?.order_drug.length}}</td>
+            <td>{{Data?.invoice_number}}</td>
+                
+          </tr>
+    
+        </tbody>
+      </table>
+
+      <pagination-controls previousLabel="prev" nextLabel="Next" (pageChange)="onDataChange($event)">
+  
+      </pagination-controls>
+      
+</div>
+
+<ng-template #other_content>
+  
+  <div class="container" style="    text-align: center;
+  border: 1px solid darkgrey;
+  padding: 15px;
+  background: lightgray;
+  margin-top: 40px;width: 40%;">
+
+No Purchase Order
+
+  </div>
+</ng-template>
+ -->

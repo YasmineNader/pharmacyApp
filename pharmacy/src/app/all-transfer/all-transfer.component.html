@@ -1,0 +1,62 @@
+
+<div class="categotyCont">
+<img class="img-responsive categoryImageposter"  src="assets/images/dr11.png" alt="image" >
+
+<div class="textPoster">
+<h1 class="text-white">All Transfers</h1>
+
+
+</div>
+
+</div>
+
+<div  class="animation spinnContainer">      
+  <span class="screenLoader"></span>
+</div>
+
+<div class="container space stockT" *ngIf="tansferData != '' else other_content">
+
+
+    <table class="table purchaseRequest">
+        <thead>
+          <tr>
+            <th >ID</th>
+            <th >Transfer Quantity</th>
+             <th>from Store</th>
+             <th>To Store</th>
+             <th>Status</th>
+
+          </tr>
+        </thead>
+        <tbody>
+        
+          <tr *ngFor="let data of tansferData | paginate:{itemsPerPage: tableSize,currentPage:page,totalItems:count}; let i=index ">
+       
+          
+            <td>{{data.id}}</td>
+            <td>{{data.transfer_drug_quantity}}</td>
+            <td>{{data.from_stock_id.id}}</td>
+            <td>{{data.to_stock_id.id}}</td>
+            <td>{{data.transfer_drug_status}}</td>
+
+      
+          </tr>
+          
+        </tbody>
+      </table>
+
+      <pagination-controls previousLabel="prev" nextLabel="Next" (pageChange)="onDataChange($event)">
+  
+      </pagination-controls>
+</div>
+
+
+
+<ng-template #other_content>
+  
+  <div class="container noData" >
+
+No Transfer Data Found
+
+  </div>
+</ng-template>

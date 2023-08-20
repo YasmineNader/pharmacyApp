@@ -1,0 +1,1806 @@
+body,
+html {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+}
+
+/* search button in home page */
+.searchBtnHome{
+
+    position: absolute;
+        top: 0px;
+        right: 0px;
+        background-color: #D37F83 !important;
+        border: none;
+        height: 100%;
+        border-radius: 0px; border-radius: 0rem 0.375rem 0.375rem 0rem;
+        width: 90px;
+}
+
+.searchType{
+    height: 60px;
+}
+.searchContaHome{
+    width: 58%;
+}
+/* shared navbar */
+
+nav {
+    background-color: #825e60;
+}
+
+/* search section in home page */
+#searchSeaction{
+    width: 100%; height: 302px; background-image: url('assets/images/search1.jpg'); margin-bottom: 50px; background-size: cover;margin-top: 90px;
+}
+/* container of text */
+.searchTextCont{
+    padding-top: 60px;  margin-left: 22%;
+}
+/*  */
+#searchText{
+    width: 15%;
+    color: white;
+    border-top: 5px solid;
+    margin-left: 5%;
+}
+#SearchForm{
+
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 150px;
+}
+/* text for poster search */
+.searchTit{
+    width: 15%;
+    color: white;
+    border-top: 5px solid;margin: 0 auto;
+}
+#searchInputs{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 150px;
+    margin-left: 5%; visibility: hidden;
+}
+/* hover when cursor click on links  in navbar */
+
+/* .dropdown-menu.show{
+    display:none!important;
+} */
+
+/* hover when cursor click on links  in navbar */
+.navbar-nav li:hover>ul.dropdown-menu {
+    display: block;
+
+}
+
+.nav-link {
+    color: white;
+}
+
+ul.dropdown-menu {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+ul.dropdown-menu li:not(:last-child) {
+    border-bottom: 1px solid #dedede;
+    padding: 3px;
+}
+
+/* .nav-item:hover{
+
+     /* background-color: #C27F8D;
+    color: white !important;}
+      */
+
+
+
+/* shared footer */
+footer {
+    /* background-color: #2f3c43; */
+    background-color: #825e60;
+    /* color: lightgray; */
+    color: white;
+
+    width: 100%;
+    height: 55px;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    line-height: 55px;
+    margin-top: auto;
+
+}
+
+
+
+/* animation of navpills */
+/* working  */
+
+/* .nav-pills:hover:after,  .navtabs:has( >.nav-link:not(.active)):hover:after {
+    background: #b06d70;
+    width: 70%;
+}   */
+
+.nav-pills .navtabs:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 3px;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+    width: 0;
+    background: #b06d70;
+}
+
+.nav-pills>.navtabs:has(>.nav-link:not(.active)):hover:after {
+    background: #b06d70;
+    width: 70%;
+}
+
+
+/* working small margin */
+/* .nav-pills :after
+{
+   content: '';
+    display: block;
+    margin: auto;
+    height: 3px;
+    width: 0px;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+    }
+
+  .nav-pills > .navtabs:has( >.nav-link:not(.active)) :hover:after {
+    width: 60%;
+    background:#b06d70;
+  } */
+
+
+/* navbar in the drug details page  */
+.nav-pills {
+
+    --bs-nav-pills-link-active-bg: #b06d70;
+}
+
+/* when pills of navbar active drugDetails page */
+
+.nav-pills .nav-link.active {
+    background-color: #b06d70;
+    color: white !important;
+    border: none;
+}
+
+/* button in the nav drug details page  */
+#pills-description-tab, #pills-details-tab {
+
+    color: #b06d70;
+    font-size: 24px;
+    font-weight: 600;
+    border: none;
+}
+
+/* button in nav drug details container li*/
+.navtabs {
+    margin-right: 40px;
+}
+
+/* text container in landing page */
+.textContLanding {
+    position: absolute;
+    top: 35%;
+    width: 43%;
+    left: 2.5%;
+}
+
+/* landing page card  */
+.landingpageCard {
+    width: 75%;
+    position: relative;
+    box-shadow: 2px 2px 7px 6px #cdb0b0;
+}
+
+/* paragraph in the landing page */
+.paraglanding {
+
+    line-height: 2;
+    text-align: justify;
+
+}
+
+/* landing page image */
+.landingImg {
+    width: 100vw;
+    height: 100vh;
+}
+
+/*landing page button   */
+#btnLanding {
+    /* width: 30%; */
+    background-color: #7e417e;
+    border: none;
+}
+
+/* landing page button hover*/
+#btnLanding:hover, #btnLogin:hover {
+
+    background-color: #ae58ae !important;
+}
+
+
+
+/* input login form errors */
+.inputError {
+    color: #b82b2b;
+    list-style: none;
+    padding: 0px;
+    /* text-align: center; */
+    margin-top: 0px !important;
+    margin-bottom: 0px;
+    font-size: 14px;
+    text-align: left;
+    text-indent: 10px;
+}
+
+
+
+
+/*all nav logos*/
+.navLogos {
+    width: 30px;
+    height: 30px;
+    color: white;
+    margin: 0 auto;
+    display: block;
+
+}
+
+/* hyperlink in li navbar for class navLogos */
+.hyperNavlogo, .adminhyperNavlogo {
+    display: block;
+    padding: 0px !important;
+}
+
+
+/* menu item names in navbar span */
+.menuItemName {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 2px;
+    margin-top: 10px;
+    text-align: center;
+    display: block;
+    line-height: 14px;
+    border-right: 2px solid white;
+}
+
+/* remove arrow of dropdown */
+.dropdown-toggle::after {
+    content: none;
+}
+
+/* category cards*/
+.cardContainer {
+    width: 18rem;
+    transition: 0.5s ease;
+    opacity: 1;
+
+}
+
+/* category button */
+.cardBtn {
+    display: none;
+    position: absolute;
+    bottom: 6%;
+    width: 100%;
+    text-align: center;
+    transition: 0.5s ease;
+
+}
+
+/* cart text*/
+.cardText {
+
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    color: white;
+    transition: 0.5s ease;
+
+}
+
+.serchForm{
+    position: absolute;top: 0px;width: 100%;text-align: center;
+}
+/* serach poster */
+.serchImagePoster{
+    background-image: url(assets/images/search3.jpg);
+    height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    filter: brightness(70%);
+}
+/* serch animation layout */
+.searchGif{
+
+    position: fixed;
+top: 0px;
+left: 0px;
+width: 100%;
+height: 100%;
+background: #0000008f;
+z-index: 9999;display: none;
+}
+/* loader */
+#animated-gif {
+    display: none;
+    text-align: center;
+}
+
+/* dispense modal */
+.dispenseModel {
+    display: none;
+}
+
+/* image of category card */
+.cardImg {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    filter: brightness(70%);
+    border-radius: 5px;
+}
+
+/* title of category section */
+.titleCat {
+    margin-bottom: 30px;
+    color: #825E60;
+}
+
+/* category button card */
+.catBtn {
+    width: 50%;
+    background-color: #d37f83 !important;
+    border: none;
+}
+
+/* category cards in the main page when pointer  */
+.cardContainer:hover .cardImg {
+    opacity: 0.5;
+    transition: 0.5s ease;
+}
+
+/* category text disappear */
+.cardContainer:hover .cardText {
+    display: none;
+    transition: 0.5s ease;
+}
+
+/* category button appear */
+.cardContainer:hover .cardBtn {
+    display: block;
+    transition: 0.5s ease;
+
+}
+
+.formToggle {
+    transform: translateY(0) !important;
+    transition: transform 1s ease;
+
+}
+/* login btn  */
+#loginBTN{
+    background-color: #7e417e;border: none;
+
+}
+/* layout image of landing page */
+.layoutimage{
+    height:auto;
+    width: 100%;
+}
+
+/* layout image of landing page container */
+.layoutLanding{
+background-color: #d5aaaa6e;width: 100%;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.loginmsg{
+    display: flex;
+    justify-content: center;
+    align-items: center;flex-direction: column;    background-color: rgb(0 0 0 / 60%);z-index: 9999;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+/* lofin form disapper */
+#loginForm {
+
+    transition: transform 1s ease;
+    position: fixed;
+    top: 0;
+    transform: translateY(-130%);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99990;
+    transition: all 0.7s ease;
+    
+}
+
+/* druginfocontainer */
+.drugInfo {
+    margin-top: 50px;
+    background-color: #f6f6f6;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+/* image in detils drug */
+.drugInfoimage {
+    width: 490px
+}
+
+/* service card when hover on it to rotate */
+.serviceCard:hover {
+
+    transform: rotateY(180deg);
+
+}
+
+/*drug details in table*/
+.drugimportInfo {
+    margin-bottom: 150px;
+    background-color: #f6f6f6;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* image cart */
+.imageCart {
+    width: 200px;
+}
+
+.branch {
+
+    transform: rotateX(180deg) scale(1.3);
+
+}
+
+/* service card on mainpage*/
+.serviceCard {
+    width: 18rem;
+    /* height: 194px; */
+    position: relative;
+    transition: all 1s;
+    transform-style: preserve-3d;
+}
+
+.branchCard {
+    width: 18rem;
+    position: relative;
+    transition: all 1s;
+    transform-style: preserve-3d;
+    padding: 0px;
+    margin: 0 auto;
+}
+
+/* branch image */
+.branchimage {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    filter: brightness(70%);
+    border-radius: 5px;
+}
+
+.TextBranchImage {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    top: 0;
+    color: white;
+}
+
+/* front side of the card */
+.front, .frontBranch {
+
+    backface-visibility: hidden;
+    height: 100%;
+    position: relative;
+}
+
+/* back  side of the card */
+.back {
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    background-color: #D37F83;
+}
+
+.backBranch {
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateX(180deg);
+    background-color: #F8F8F8;
+    border-radius: 5px;
+}
+
+
+.cartTable td, .purchaseRequest td, .purchaseRequest th {
+    height: 80px;
+    width: 160px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 42px 26px 37px 0px;
+}
+
+.cartName{
+    font-size: 40px;
+}
+
+.invTable {
+    margin: 0px 0px 24px;
+}
+
+.invTable tbody, .invTable td, .invTable tfoot, .invTable th, .invTable thead, .invTable tr {
+    /* border-style: inherit; */
+    border: 0px;
+}
+
+.invTable tr {
+    border-top: 1px solid #e6e6e6;
+}
+
+
+.invTable td, .invTable th {
+    padding: 24px 0;
+}
+
+.drugCardBtn {
+    background-image: linear-gradient(#c08385, #994f52);
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+    transition: .4s;
+    background-color: #d37f83 !important;
+    border: none;
+    width: 80%;
+}
+
+
+.drugCardBtn:hover {
+    background-size: 100% 100%;
+    color: whitesmoke;
+}
+
+.cardDrugImg {
+    transition: all .2s ease-in;
+    width: 450px;
+}
+
+.cardDrugImg:hover {
+    transform: scale(1.1);
+}
+/* space of container in the search button */
+.contSpace{
+    padding-top: 60px;
+}
+.drugCard {
+    overflow: hidden;
+    width: 18rem;
+    padding: 0px;
+    margin: 0 auto;
+}
+
+.btnAdd{
+    background-color: #84bed6;
+    border: none;
+}
+.btnAdd:hover{
+    background-color: #0e2e3b !important;
+
+}
+
+/* subMenu in the shared navbar  */
+.subMenu {
+
+    position: absolute;
+    right: 0px;
+    left: unset;
+
+
+}
+
+/* why section in the main page */
+#whySection {
+
+    width: 100%;
+    position: relative;
+
+}
+
+
+/* why paragraph in the main page */
+#whyParagraph {
+    width: 40%;
+    line-height: 2;
+    font-size: 21px;
+    text-align: justify;
+    text-align: center;
+}
+
+/* search container in the search page */
+.searchinputCont{
+    position: relative;height: 100%;
+}
+.loader {
+    width: 24px;
+    height: 80px;
+    display: block;
+    margin: 35px auto 0;
+    border: 1px solid #FFF;
+    border-radius: 0 0 50px 50px;
+    position: relative;
+    box-shadow: 0px 0px #D37F83 inset;
+    background-image: linear-gradient(#D37F83 100px, transparent 0);
+    background-position: 0px 0px;
+    background-size: 22px 80px;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    animation: animloader 6s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.loader::after {
+    content: '';
+    box-sizing: border-box;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    border: 1px solid #FFF;
+    border-radius: 50%;
+    width: 28px;
+    height: 6px;
+}
+
+.loader::before {
+    content: '';
+    box-sizing: border-box;
+    left: 0;
+    bottom: -4px;
+    border-radius: 50%;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    animation: animloader1 6s linear infinite;
+}
+
+@keyframes animloader {
+    0% {
+        background-position: 0px 80px;
+    }
+
+    100% {
+        background-position: 0px 0px;
+    }
+}
+
+@keyframes animloader1 {
+    0% {
+        box-shadow: 4px -10px rgba(255, 255, 255, 0), 6px 0px rgba(255, 255, 255, 0), 8px -15px rgba(255, 255, 255, 0), 12px 0px rgba(255, 255, 255, 0);
+    }
+
+    20% {
+        box-shadow: 4px -20px rgba(255, 255, 255, 0), 8px -10px rgba(255, 255, 255, 0), 10px -30px rgba(255, 255, 255, 0.5), 15px -5px rgba(255, 255, 255, 0);
+    }
+
+    40% {
+        box-shadow: 2px -40px rgba(255, 255, 255, 0.5), 8px -30px rgba(255, 255, 255, 0.4), 8px -60px rgba(255, 255, 255, 0.5), 12px -15px rgba(255, 255, 255, 0.5);
+    }
+
+    60% {
+        box-shadow: 4px -60px rgba(255, 255, 255, 0.5), 6px -50px rgba(255, 255, 255, 0.4), 10px -90px rgba(255, 255, 255, 0.5), 15px -25px rgba(255, 255, 255, 0.5);
+    }
+
+    80% {
+        box-shadow: 2px -80px rgba(255, 255, 255, 0.5), 4px -70px rgba(255, 255, 255, 0.4), 8px -120px rgba(255, 255, 255, 0), 12px -35px rgba(255, 255, 255, 0.5);
+    }
+
+    100% {
+        box-shadow: 4px -100px rgba(255, 255, 255, 0), 8px -90px rgba(255, 255, 255, 0), 10px -120px rgba(255, 255, 255, 0), 15px -45px rgba(255, 255, 255, 0);
+    }
+}
+
+
+
+
+pagination-controls nav {
+
+    background-color: white;
+    margin-top: 40px;
+    text-align: center;
+}
+
+
+
+
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    background: linear-gradient(0deg, rgba(255, 61, 0, 0.2) 33%, #825E60 100%);
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.spinner::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: white;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.load {
+    width: 48px;
+    height: 48px;
+    border: 5px dotted #825e60;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 2s linear infinite;
+}
+
+
+
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* counter for stock cart */
+#counter {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    background: lightpink;
+}
+
+/* counter for dispense cart */
+#counterDispense, #purchaseCount {
+
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    background: lightpink;
+}
+
+/* shared footer */
+.adminFooter {
+    background-color: #2f3c43;
+    color: lightgray;
+    width: 100%;
+    height: 55px;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    line-height: 55px;
+    margin-top: auto;
+
+}
+
+/* shared nav */
+.adminNav {
+    background-color: #2f3c43;
+    color: lightgray;
+}
+
+
+/*all nav logos*/
+.adminnavLogos {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 100%;
+    color: white;
+    margin: 0 auto;
+    display: block;
+    font-size: 1rem;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+}
+
+
+/* background color for home nav button in admin */
+.homeadminlogo {
+    background-color: #f0c24b;
+    padding: 8px;
+}
+
+/* background color for courses nav button */
+.reportsadmin {
+    background-color: #198754;
+    padding: 8px;
+}
+
+.fa-phone-volume {
+    background-color: #84bed6;
+    padding: 8px;
+}
+
+.fa-users-between-lines {
+    background-color: #2b576a;
+    padding: 8px;
+}
+
+
+.fa-pills {
+
+    background-color: #ea7066;
+    padding: 8px;
+}
+
+.fa-prescription-bottle-medical {
+    background-color: #b553ae;
+    padding: 8px;
+}
+
+.fa-store {
+    background-color: #643561;
+    padding: 8px;
+}
+.adminContainer{
+    margin-top: 40px;
+}
+.marbott{
+    margin-bottom: 100px;
+}
+/* login and register bar header */
+
+.loginBar {
+    background-color: #2f3c43;
+    color: lightgray;
+    width: 100%;
+    height: 55px;
+    line-height: 55px;
+    text-align: right;
+}
+
+/* list of login and register */
+
+.loginList {
+    list-style: none;
+}
+
+/* button of login and register */
+.logBtn {
+    color: white;
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+/* button of login and register when  hover on it */
+
+.logBtn:hover {
+    color: white;
+    text-decoration: none;
+
+}
+
+/* container of details */
+.detailsInforCon {
+    color: grey;
+    width: 70%;
+}
+
+/* dispense  button */
+.dispenseBTN {
+    background-color: #D37F83 !important;
+    border: none;
+    margin-right: 10px;
+    width: 155px;
+}
+
+/* stock  button */
+.StockBTN {
+    background-color: #b06d70 !important;
+    border: none;
+    margin-right: 10px;
+    width: 155px;
+}
+
+/* price in detilas */
+
+.priceDetails {
+
+
+    color: #b64f55;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* menu item names in navbar span */
+.adminmenuItemName {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 2px;
+    margin-top: 10px;
+    text-align: center;
+    display: block;
+    line-height: 14px;
+    color: black;
+}
+
+/* border for text in navbar menu */
+.main {
+    border-right: 2px solid orange;
+}
+
+.users {
+    border-right: 2px solid #198754;
+}
+
+.sales {
+    border-right: 2px solid #84bed6;
+
+}
+
+/* overlay content for drug shortage */
+.overlayShortagecontent {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+
+}
+
+/* overlay for drug shortage */
+.overlayShortage {
+
+    background-color: #E1BFC6;
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    display: none;
+}
+
+/* short image */
+.drugShorts {
+
+    position: relative;
+}
+
+/* short image overlay appear*/
+.drugShorts:hover .overlayShortage {
+
+
+    display: block;
+}
+
+/*cart image poster  */
+.cartImage {
+
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    filter: brightness(50%);
+
+}
+
+/* cart image text */
+/* .cartImageText{
+position: absolute;
+top: 0%;
+display: flex;
+justify-content: center;
+height: 300px;
+align-items: center;
+width: 100%;
+} */
+/* cart image container */
+/* .cartImageContent{
+    position: relative;height: 300px;
+width: 100%;
+} */
+/* no Item in cart */
+/* .noCart{
+    text-align: center;
+    border: 1px solid darkgrey;
+    padding: 15px;
+    background: lightgray;
+    margin-top: 40px;width: 40%;
+} */
+
+/* cart CheckOut Container */
+
+.cartCheckoutCOnt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* container background for checkout */
+
+.containerBackground {
+    background-color: #F8F8F8;
+    width: 100%;
+    height: 400px;
+    padding: 45px;
+    border-radius: 10px;
+}
+
+/* text in the cart checkout */
+.cartText {
+    font-size: 24px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.cartTextTotal {
+    color: #7d879c;
+    font-weight: 400;
+}
+
+/* text in the cart checkout */
+.sumTotalcart {
+    font-weight: 800;
+}
+
+/* btn checkout */
+.btnCheckout {
+    background-color: #D37F83;
+    border: none;
+}
+
+/* category container cart image container */
+
+.categotyCont, .cartImageContent {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+/* category image poster */
+.categoryImageposter {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    filter: brightness(50%);
+}
+
+/* text for category image poster , cart image text */
+.textPoster, .cartImageText {
+    position: absolute;
+    top: 0%;
+    display: flex;
+    justify-content: center;
+    height: 300px;
+    align-items: center;
+    width: 100%;
+}
+
+
+#formLogin{
+    background-color: #f7f7f7;
+     box-shadow: 2px 2px 7px 6px #888888;
+     border-radius: 10px;
+     padding: 100px 60px;width: 400px;
+}
+/* table in invoice */
+.headstable{
+    background-color: #efefef;
+}
+/* save button in invoice */
+.savebtn{
+    background-color: #d37f83;border: none;margin-left: 10px;
+}
+/* container for loader */
+.spinnContainer {
+
+    display: none;
+    text-align: center;
+    margin-top: 70px;
+
+}
+/* scroll table admin */
+.scrollTable{
+
+    margin-bottom: 100px; overflow-x: scroll;
+}
+.btnContaInv{
+    margin-bottom: 100px;
+}
+.invoiceT{
+    margin-bottom: 200px;
+}
+/* spin in the modal */
+.spinnmodal {
+
+    display: none;
+    text-align: center;
+
+}
+
+/* sales overview chart */
+.divChart {
+
+    display: block;
+    border: 1px solid lightgrey;
+    padding: 0px;
+}
+
+/* table title in home page */
+.dispenseTitle {
+    background: #825e60;
+    padding: 12px;
+    color: white;
+}
+
+/* center chart in div */
+.centerchart {
+    width: 18rem;
+    margin: 0 auto;
+}
+
+/* table of operations for pharmacist */
+.dispenseTable, .stockTable {
+    display: none;
+}
+
+#categorySection {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    visibility: hidden;
+}
+
+.btnPink:hover,.btnCheckout:hover {
+    background-color: #825E60 !important;
+}
+
+/* outofstocklabel */
+.outofstock {
+    position: absolute;
+    top: 35%;
+    transform: rotate(-43deg);
+    color: #ff000087;
+    font-size: 43px;
+    left: 25px;
+}
+
+.divChartTable {
+    border: 1px solid lightgrey;
+    padding: 0px;
+}
+
+/* .drugShortCont{
+    margin-top: 70px;
+} */
+
+
+.searchContainer{
+
+    margin-bottom: 150px;margin-top: 50px;display: none;
+}
+/* title of drug shorts */
+.drugShortText {
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: #D6D6D6;
+    padding: 0px 62px 10px 0px;
+    color: #825E60;
+
+}
+
+/* sales counter number */
+#salesCount, #salesAmount {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-weight: bold;
+    font-size: 45px;
+
+
+}
+
+/* counter of sales  */
+.countChart {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border-right: 7px solid #a56468;
+    position: relative;
+    border-left: 1px solid #a56468;
+    border-top: 0.5px solid #a56468;
+    border-bottom: 7px solid #a56468;
+    margin: 0 auto;
+    margin-bottom: 4px;
+}
+
+/* title of charts */
+
+.charTitle {
+    background: #825e60;
+    padding: 15px;
+    color: white;
+}
+
+.charTitlesmall {
+    background: #825e60;
+    padding: 9px;
+    color: white;
+}
+
+/* space between container and footer */
+.space {
+
+    margin-bottom: 100px;
+    margin-top: 40px;
+}
+
+/* button for all tables */
+.btnPink {
+    background-color: #d37f83;
+    border: none;
+
+}
+
+/* if no available branches container */
+#purchaseBTN {
+    margin-bottom: 150px;
+    margin-top: 50px;
+    /* padding: 25px 0px 50px 0px; */
+    padding: 30px 30px;
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    display: none;
+}
+
+/* templete if no data return */
+.noData, .noCart {
+    text-align: center;
+    border: 1px solid darkgrey;
+    padding: 15px;
+    background: lightgray;
+    margin-top: 40px;
+    width: 40%;
+}
+
+.catimgCard {
+    background-color: #F2EADE;
+    height: 290px
+}
+
+.catimgCardCont {
+    height: 288px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* text in available branch container */
+.branchText {
+    margin-bottom: 45px;
+    color: #825E60;
+}
+
+.btnlarge {
+    height: 80px;
+}
+
+/* available branches section */
+#branchSection {
+    margin-bottom: 150px;
+    margin-top: 50px;
+    display: none;
+    padding: 30px 30px;
+    background-color: #f6f6f6;
+    border-radius: 10px;
+}
+
+/* for small screens */
+
+@media screen and (max-width: 1300px) {
+
+    /* landing page card  */
+    .landingpageCard {
+        width: 90%;
+    }
+
+    /* why paragraph in the main page */
+    #whyParagraph {
+        width: 50%;
+    }
+
+}
+
+/* poster image home */
+.homeImage {
+    height: 400px;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 992px) {
+
+    .contSpace{
+
+margin-bottom: 30px;
+
+    }
+    /* image in detils drug */
+    .drugInfoimage {
+        width: 100%
+    }
+
+    /* menu item names in navbar span */
+    .adminmenuItemName {
+        border: none;
+        padding: 0px;
+        margin-top: 0px;
+        display: inline;
+    }
+    .invoiceData {
+    
+        left: 22% !important;
+        
+    }
+    .searchTextCont {
+  
+        margin-left: 5%;
+    }
+    
+    #searchText {
+     
+        margin-left: 8%;
+    }
+    /* all drug container */
+    .alldrugDet {
+        text-align: center;
+    }
+
+    /* paragraph container of details */
+    .detailsInforCon {
+        margin: 0 auto;
+    }
+
+    /* menu button logo */
+    .navLogos, .adminnavLogos {
+        display: inline-block;
+    }
+
+    /* why paragraph in the main page */
+    #whyParagraph {
+        width: 60%;
+    }
+
+    /* menu item names in navbar span */
+    .menuItemName {
+        border: none;
+        padding: 0px;
+        margin-top: 0px;
+        display: inline;
+        margin-left: 10px;
+    }
+
+    /* menu logo and names  */
+    .hyperNavlogo, .adminhyperNavlogo {
+        display: block;
+        padding: 10px 0 !important;
+    }
+
+    /* landing page card  */
+    .landingpageCard {
+        width: 95%;
+    }
+
+    /* text container in landing page */
+    .textContLanding {
+
+        top: 33%;
+        width: 42%;
+
+    }
+
+    /* scroll tables */
+    .scroll {
+        overflow-x: scroll;
+    }
+
+}
+
+@media screen and (max-width: 810px) {
+
+    /* paragraph in the landing page */
+    .paraglanding {
+        line-height: 1.3;
+
+
+    }
+
+    /* landing page card  */
+    .landingpageCard {
+        width: 98%;
+    }
+
+    /* why paragraph in the main page */
+    #whyParagraph {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 684px) {
+
+    /* paragraph in the landing page */
+    .paraglanding {
+        font-size: 12px;
+        line-height: 1.1;
+        text-align: unset;
+
+
+    }
+
+    .invoiceText {
+        position: absolute;
+        left: 10% !important;
+        top: 10%;
+        font-size: 50px !important;
+        color: white;
+    }
+    .invoiceData {
+        position: absolute;
+        bottom: 28%;
+        left: -9% !important;
+        font-weight: 600;
+        color: white;
+        margin-left: 53px;
+    }
+    /* why paragraph in the main page */
+    #whyParagraph {
+        width: 95%;
+    }
+
+    /* text container in landing page */
+    .textContLanding {
+        top: 31%;
+        width: 47%;
+    }
+
+}
+
+
+@media screen and (max-width: 476px) {
+
+    /* paragraph in the landing page */
+    .paraglanding {
+        font-size: 7px;
+
+    }
+
+}
+
+.owl-carousel .owl-stage-outer {
+    height: 320px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* all text area not resize */
+textarea {
+    resize: none;
+}
+
+/* invoive container */
+.invCon {
+    /* #b9b9b9 */
+    background-color: #dee2e6;
+    width: 95%;
+    height: 280px;
+    position: relative;
+}
+
+.invIcon {
+    background-color: #a77d7f;
+    width: 60%;
+    height: 250px;
+    position: relative;
+}
+
+.Upinvoice {
+
+    position: absolute;
+    top: 35%;
+    right: 15%;
+}
+
+.invConIcon {
+    position: absolute;
+    top: 20%;
+    right: 53%;
+}
+
+.invoiceText {
+    position: absolute;
+    left: 30%;
+    top: 10%;
+    font-size: 60px;
+    color: white;
+}
+
+.invoiceData {
+    position: absolute;
+    bottom: 18%;
+    left: 25%;
+    font-weight: 600;
+    color: white;
+    margin-left: 53px;
+
+}
+
+.invoiceID {
+    margin-left: 25px;
+}
+
+.invTo {
+
+    color: white;
+
+    font-size: 20px;
+}
+
+#nameInv {
+    color: white;
+    font-size: 15px;
+}
+
+
+
+.invoiceTable {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 45px;
+}
+
+
+
+
+
+
+
+
+.owl-item {
+
+
+    width: 300px !important;
+}
+
+
+
+
+
+
+
+/* pagination backgroun */
+.ngx-pagination .current {
+
+
+    background-color: #bd878a !important;
+}
+
+
+
+
+
+
+
+
+
+
+.screenLoader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #D37F83;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    animation: pulse 1s linear infinite;
+}
+
+.screenLoader:after {
+    content: '';
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border: 5px solid #D37F83;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: scaleUp 1s linear infinite;
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: translate(-50%, -50%) scale(0)
+    }
+
+    60%, 100% {
+        transform: translate(-50%, -50%) scale(1)
+    }
+}
+
+@keyframes pulse {
+    0%, 60%, 100% {
+        transform: scale(1)
+    }
+
+    80% {
+        transform: scale(1.2)
+    }
+}
+
+
+
+
+.loginloader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #AE58AE;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+.screenLoaderAdmin {
+    width: 48px;
+    height: 48px;
+    border: 5px solid grey;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    animation: pulse 1s linear infinite;
+}
+
+.screenLoaderAdmin:after {
+    content: '';
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border: 5px solid grey;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: scaleUp 1s linear infinite;
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: translate(-50%, -50%) scale(0)
+    }
+
+    60%, 100% {
+        transform: translate(-50%, -50%) scale(1)
+    }
+}
+
+@keyframes pulse {
+    0%, 60%, 100% {
+        transform: scale(1)
+    }
+
+    80% {
+        transform: scale(1.2)
+    }
+}

@@ -1,0 +1,186 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="animation spinnContainer">      
+    <span class="screenLoaderAdmin "></span>
+  </div>
+
+<div class="container adminT adminContainer">
+
+    <h3 class="formTitle">Edit Drug Form</h3>
+    <h6 *ngIf="msg !='' ">{{msg?.message}}</h6>
+
+    <form class="registerForm" [formGroup]="editDrug" (ngSubmit)="EditDrug()">
+     
+<div class=" row">
+<div class="form-group mb-4 col-md-6">
+            
+ <input type="text" id="en_brand_name"  formControlName="en_brand_name" placeholder="Brand Name English" class="form-control"  >
+
+ <div *ngIf="isSubmitted||(en_brand_name?.invalid && (en_brand_name?.dirty || en_brand_name?.touched))">
+    <ul class="inputError mt-1">
+        <li *ngIf="en_brand_name?.errors?.['required']">Drug Name is Required</li>
+       
+    </ul>
+
+</div>
+
+</div>   
+
+<div class="form-group mb-4 col-md-6">
+    
+    <input type="text" id="ar_brand_name" formControlName="ar_brand_name" placeholder="Brand Name Arabic"  class="form-control " >
+
+    <div *ngIf="isSubmitted||(ar_brand_name?.invalid && (ar_brand_name?.dirty || ar_brand_name?.touched))">
+        <ul class="inputError mt-1">
+            <li *ngIf="ar_brand_name?.errors?.['required']">Drug Name is Required</li>
+            <li *ngIf="ar_brand_name?.errors?.['minlength']">Drug Name less than 3 char</li>
+            <li *ngIf="ar_brand_name?.errors?.['maxlength']">Drug Name Exceeds 20 char</li>
+        </ul>
+    
+    </div>
+</div>
+
+
+</div>
+
+<div  class=" row">
+ <div  class=" form-group mb-4 col-md-6">
+    
+    <div class=" form-group mb-4">
+        <input type="text" id="chemical_name" formControlName="chemical_name" placeholder="Chemical Name"
+        class="form-control"  >
+        <div *ngIf="isSubmitted||(chemical_name?.invalid && (chemical_name?.dirty || chemical_name?.touched))">
+            <ul class="inputError mt-1">
+                <li *ngIf="chemical_name?.errors?.['required']">Chemical Name is Required</li>
+                <li *ngIf="chemical_name?.errors?.['minlength']">Chemical Name less than 6 char</li>
+                <li *ngIf="chemical_name?.errors?.['maxlength']">Chemical Name Exceeds 15 char</li>
+            </ul>
+        
+        </div>
+    </div>
+        
+        </div>
+        <div  class=" form-group mb-4 col-md-6">
+        <select class="form-select" aria-label="Default select example" formControlName="class_id">
+            <option value={{cat.id}} *ngFor="let cat of categoryInfo">{{cat.class_name}} </option>
+            
+          </select>
+          <div *ngIf="isSubmitted||(class_id?.invalid && (class_id?.dirty || class_id?.touched))">
+            <ul class="inputError mt-1">
+                <li *ngIf="class_id?.errors?.['required']">Category is Required</li>
+              
+            </ul>
+        
+        </div>
+        </div>
+
+        </div>
+        
+ 
+        
+        <div class=" row">
+            <div class="form-group mb-4 col-md-6">
+                        
+             <input type="text" id="manufacture"  formControlName="manufacture" placeholder="Manufacture" class="form-control"  >
+            
+             <div *ngIf="isSubmitted||(manufacture?.invalid && (manufacture?.dirty || manufacture?.touched))">
+                <ul class="inputError mt-1">
+                    <li *ngIf="manufacture?.errors?.['required']">Manufacture is Required</li>
+                   
+                </ul>
+            
+            </div>
+            
+            </div>   
+            
+            <div class="form-group mb-4 col-md-6">
+                
+                <input type="text" id="drug_dose" formControlName="drug_dose" placeholder="Drug Dose"  class="form-control " >
+            
+                <div *ngIf="isSubmitted||(drug_dose?.invalid && (drug_dose?.dirty || drug_dose?.touched))">
+                    <ul class="inputError mt-1">
+                        <li *ngIf="drug_dose?.errors?.['required']">Drug Dose is Required</li>
+                        
+                    </ul>
+                
+                </div>
+            </div>
+            
+            
+            </div>
+             
+            
+        
+        <div class=" row">
+            <div class="form-group mb-4 col-md-6">
+                        
+             <input type="text" id="national_code"  formControlName="national_code" placeholder="National Code" class="form-control"  >
+            
+             <div *ngIf="isSubmitted||(national_code?.invalid && (national_code?.dirty || national_code?.touched))">
+                <ul class="inputError mt-1">
+                    <li *ngIf="national_code?.errors?.['required']">National Code is Required</li>
+                    <li *ngIf="national_code?.errors?.['minlength']">National Code less than 2 char</li>
+                    <li *ngIf="national_code?.errors?.['maxlength']">National Code Exceeds 4 char</li>
+                   
+                </ul>
+            
+            </div>
+            
+            </div>   
+            
+            <div class="form-group mb-4 col-md-6">
+                
+                <div class="form-group mb-4">
+                    <textarea class="form-control" rows="1" placeholder="Drug Usage" formControlName="drug_usage"></textarea>
+                  </div>
+              <div *ngIf="isSubmitted||(drug_usage?.invalid && (drug_usage?.dirty || drug_usage?.touched))">
+                <ul class="inputError mt-1">
+                    <li *ngIf="drug_usage?.errors?.['required']">Drug Usage is Required</li>
+                   
+                  
+                </ul>
+            
+            </div>
+            </div>
+            
+            
+            </div>
+       
+            <div  class=" row">
+                <div  class=" form-group mb-4 col-md-6">
+                   
+                   <div class=" form-group mb-4">
+                       <input type="text" id="main_uom" formControlName="main_uom" placeholder="main"
+                       class="form-control"  >
+                       <div *ngIf="isSubmitted||(main_uom?.invalid && (main_uom?.dirty || main_uom?.touched))">
+                           <ul class="inputError mt-1">
+                               <li *ngIf="main_uom?.errors?.['required']">Main is Required</li>
+                              
+                           </ul>
+                       
+                       </div>
+                   </div>
+                       
+                       </div>
+             
+                       <div  class=" form-group mb-4 col-md-6">
+                   
+                        <div class=" form-group mb-4">
+                            <input type="text" id="small_uom" formControlName="small_uom" placeholder="Small"
+                            class="form-control"  >
+                            <div *ngIf="isSubmitted||(small_uom?.invalid && (small_uom?.dirty || small_uom?.touched))">
+                                <ul class="inputError mt-1">
+                                    <li *ngIf="small_uom?.errors?.['required']">Main is Required</li>
+                                   
+                                </ul>
+                            
+                            </div>
+                        </div>
+                            
+                            </div>
+                       </div>
+        <div><button type="submit" class="btn btn-primary marbott btnAdd">Update</button></div>
+    </form>
+    </div>
+
+    <app-admin-footer></app-admin-footer>

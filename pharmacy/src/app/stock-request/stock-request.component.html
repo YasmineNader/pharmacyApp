@@ -1,0 +1,65 @@
+
+<div class="categotyCont">
+<img class="img-responsive categoryImageposter"  src="assets/images/dr11.png" alt="image" >
+
+<div class ="cartImageText">
+<h1 class="text-white">Stock Requests</h1>
+
+
+</div>
+
+</div>
+
+<div  class="animation spinnContainer" >      
+  <span class="screenLoader"></span>
+</div>
+
+
+<div class="container stockT space scroll"  *ngIf="requestList != '' else other_content">
+
+
+    <table class="table purchaseRequest">
+        <thead>
+          <tr>
+            <th >#Number</th>
+            <th >Requsted Store</th>
+             <th>Store Location</th>
+             <th>Drug Requested</th>
+             
+             <th></th>
+           
+          </tr>
+        </thead>
+        <tbody>
+        
+          <tr *ngFor="let list of requestList | paginate:{itemsPerPage: tableSize,currentPage:page,totalItems:count}; let i=index">
+       
+          
+            <td>{{list.id}}</td>
+            <td>{{list.store_id.store_name}}</td>
+            <td>{{list.store_id.store_location}}</td>
+            <td>{{list.store_requested.length}}</td>
+          
+            
+            <td><a href="/stock/requestDetails/{{list.id}}"  class="btn btn-danger btnPink">Details</a></td>
+          </tr>
+          
+        </tbody>
+      </table>
+      <pagination-controls previousLabel="prev" nextLabel="Next" (pageChange)="onDataChange($event)">
+  
+      </pagination-controls>
+
+</div>
+
+
+<ng-template #other_content>
+  
+  <div class="container noData" >
+
+No Stock Requests available
+
+  </div>
+</ng-template>
+
+

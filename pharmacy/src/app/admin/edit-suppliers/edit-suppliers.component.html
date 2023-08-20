@@ -1,0 +1,56 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div  class="animation spinnContainer">      
+    <span class="screenLoaderAdmin"></span>
+  </div>
+  
+
+<div class="container adminT" *ngIf="supplierData != '' else other_content">
+    <button class="btn btn-primary mt-3 btnAdd"  routerLink="/addSupplier">Add Supplier</button>
+    
+    <table class="table table-striped table-bordered text-center mt-3">
+        <thead>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+    
+        </thead>
+        <tbody>
+            
+            <tr *ngFor="let supplier of supplierData | paginate:{itemsPerPage: tableSize,currentPage:page,totalItems:count}; let i=index ">
+                <td>{{supplier?.supplier_first_name}}</td>
+                <td>{{supplier?.supplier_middle_name}}</td>
+                <td>{{supplier?.supplier_last_name}}</td>
+                <td>{{supplier?.supplier_address}}</td>
+                <td>{{supplier?.supplier_aphone1}}</td>
+
+             <!-- <td>
+                
+                  
+                    <button class="btn btn-danger" >Delete</button>
+                    <button class="btn btn-success">Edit</button>
+                
+             </td> -->
+            </tr>
+           
+        </tbody>
+    </table>
+    <pagination-controls previousLabel="prev" nextLabel="Next" (pageChange)="onDataChange($event)">
+  
+    </pagination-controls>
+    </div>
+
+
+    <ng-template #other_content>
+  
+        <div class="container noData">
+      
+      No Suppliers Exist
+      
+        </div>
+
+      </ng-template>
+
+    <app-admin-footer></app-admin-footer>

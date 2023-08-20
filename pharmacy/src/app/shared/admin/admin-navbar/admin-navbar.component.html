@@ -1,0 +1,146 @@
+<!-- <main class=" main_home "> -->
+
+    <header>
+        <!-- Start loginBar  -->
+
+      <div class="loginBar">
+
+        <ul>
+
+          <li class="loginList">
+
+            <a class="logBtn">Welcome {{getsession.Name}}</a>
+
+            <span class="logBtn">||</span>
+            <a href = "#" class="logBtn" (click)="logOut()">LogOut  </a>
+                      
+            <i class="fa-solid fa-right-from-bracket me-3"></i>
+
+          </li>
+
+
+        </ul>
+
+      </div>
+         <!--End loginBar -->
+   
+         <!-- start navbar-->
+ 
+ 
+      <nav class="navbar navbar-expand-lg navbar-light bg-light adminNav">
+          <div class="container-fluid">
+         <div>
+        <img src="assets/images/logo.png" alt="" width="80" >
+        <a class="navbar-brand">Drug Store</a>
+
+      </div>
+     
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+ 
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+         
+
+            <li class="nav-item dropdown active">
+
+              <a class="nav-link dropdown-toggle adminhyperNavlogo" href="/EditUser"  role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <!-- <i class="fa-regular fa-file-lines adminnavLogos reportsadmin"></i> -->
+                <i class="fa-solid fa-user-tie adminnavLogos reportsadmin"></i>
+                <span class = "adminmenuItemName users">Users</span>
+
+              </a>
+
+
+            </li>
+            <!-- <li class="nav-item dropdown active">
+
+              <a class="nav-link dropdown-toggle adminhyperNavlogo" href="/" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                <i class="fa-solid fa-house-chimney adminnavLogos homeadminlogo"></i>
+                <span class = "adminmenuItemName main">Class</span>
+              </a>
+
+
+            </li> -->
+
+                   <li class="nav-item dropdown active">
+
+              <a class="nav-link dropdown-toggle adminhyperNavlogo" href="/editSupplier"  role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa-solid fa-users-between-lines adminnavLogos"></i>      
+                <span class = "adminmenuItemName sales">Supplier</span>
+
+              </a>
+
+
+            </li>
+
+            <li class="nav-item dropdown active">
+
+              <a class="nav-link dropdown-toggle adminhyperNavlogo" href="/editUserStore"  role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa-solid fa-phone-volume adminnavLogos"></i>
+                  <span class = "adminmenuItemName sales">UserStore</span>
+
+              </a>
+
+
+            </li>
+            <li class="nav-item dropdown active">
+
+              <a class="nav-link dropdown-toggle adminhyperNavlogo" href="/editDrug"  role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <!-- <i class="fa-solid fa-pills adminnavLogos" ></i> -->
+                <i class="fa-solid fa-prescription-bottle-medical adminnavLogos"></i>
+
+                <span class = "adminmenuItemName sales" >Drug</span>
+
+              </a>
+
+
+            </li>
+            <li class="nav-item dropdown active">
+
+              <a class="nav-link dropdown-toggle adminhyperNavlogo" href="/editStore"  role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <!-- <i class="fa-solid fa-pills adminnavLogos" ></i> -->
+                <!-- <i class="fa-solid fa-prescription-bottle-medical adminnavLogos"></i> -->
+                <i class="fa-solid fa-store adminnavLogos"></i>
+                <span class = "adminmenuItemName sales" >Stores</span>
+
+              </a>
+
+
+            </li>
+            <li class="nav-item dropdown active">
+
+              <a class="nav-link dropdown-toggle adminhyperNavlogo" href="/editClass"  role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa-solid fa-pills adminnavLogos" ></i>
+
+                  <!-- <i class="fa-sharp fa-solid fa-person-chalkboard adminnavLogos"></i> -->
+                <span class = "adminmenuItemName " >Category</span>
+
+              </a>
+
+
+            </li>
+       
+            
+          </ul>
+
+        </div>
+         </div>
+      </nav>
+
+
+
+
+    </header>
+<!-- End navbar-->

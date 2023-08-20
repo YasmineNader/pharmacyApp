@@ -1,0 +1,137 @@
+<app-admin-navbar></app-admin-navbar>
+
+
+<div class="container adminContainer ">
+
+    <h3 class="formTitle">Registration Form</h3>
+    <form class="registerForm" [formGroup]="register" (ngSubmit)="userValue()">
+     <h6 *ngIf="msg !='' ">{{msg?.message}}</h6>
+<div class=" row">
+<div class="form-group mb-4 col-md-6">
+            
+ <input type="text" id="firstName"  formControlName="first_name" placeholder="First Name" class="form-control"  >
+
+ <div *ngIf="isSubmitted||(first_name?.invalid && (first_name?.dirty || first_name?.touched))">
+    <ul class="inputError mt-1">
+        <li *ngIf="first_name?.errors?.['required']">First Name is Required</li>
+       
+    </ul>
+
+</div>
+
+</div>   
+
+<div class="form-group mb-4 col-md-6">
+    
+    <input type="text" id="middle_name"  formControlName="middle_name" placeholder="Middle Name" class="form-control"  >
+    
+    <div *ngIf="isSubmitted||(middle_name?.invalid && (middle_name?.dirty || middle_name?.touched))">
+       <ul class="inputError mt-1">
+           <li *ngIf="middle_name?.errors?.['required']">Middle Name is Required</li>
+          
+       </ul>
+   
+   </div>
+    
+</div>
+
+
+</div>
+
+<div class=" row">
+    <div class="form-group mb-4 col-md-6">
+                
+        <input type="text" id="lastName" formControlName="last_name" placeholder="Last Name" class="form-control " >
+
+        <div *ngIf="isSubmitted||(last_name?.invalid && (last_name?.dirty || last_name?.touched))">
+            <ul class="inputError mt-1">
+                <li *ngIf="last_name?.errors?.['required']">Last Name is Required</li>
+                <li *ngIf="last_name?.errors?.['minlength']">Last Name less than 3 char</li>
+                <li *ngIf="last_name?.errors?.['maxlength']">Last Name Exceeds 20 char</li>
+            </ul>
+        
+        </div>
+    
+    </div>   
+    
+    <div class="form-group mb-4 col-md-6">
+        
+        <div class=" form-group mb-4">
+            <input type="email" id="username" aria-describedby="emailHelp" formControlName="username" placeholder="UserName" class="form-control"  >
+            <div *ngIf="isSubmitted||(username?.invalid && (username?.dirty || username?.touched))">
+                <ul class="inputError mt-1">
+                    <li *ngIf="username?.errors?.['required']">Username is Required</li>
+                    <li *ngIf="username?.errors?.['email']">Invalid Username</li>
+                   
+                </ul>
+            
+            </div>
+        
+        </div>
+    </div>
+    
+    
+    </div>
+    
+
+
+
+
+
+<div  class=" row">
+ <div  class=" form-group mb-4 col-md-6">
+    
+    <div class=" form-group mb-4">
+        <input type="password" id="password" formControlName="password" placeholder="Password"
+        class="form-control"  >
+        <div *ngIf="isSubmitted||(password?.invalid && (password?.dirty || password?.touched))">
+            <ul class="inputError mt-1">
+                <li *ngIf="password?.errors?.['required']">Password is Required</li>
+                <li *ngIf="password?.errors?.['minlength']">Password less than 6 char</li>
+                <li *ngIf="password?.errors?.['maxlength']">Password Exceeds 15 char</li>
+            </ul>
+        
+        </div>
+    </div>
+        
+        </div>
+        <div  class=" form-group mb-4 col-md-6">
+        <select class="form-select" aria-label="Default select example" formControlName="login_type">
+          
+            <option value="admin">Admin</option>
+            <option value="pharmacist">Pharmacist</option>
+            <option value="stockkeeper">Stockkeeper</option>
+            <option value="purchaser">Purchaser</option>
+          </select>
+          <div *ngIf="isSubmitted||(login_type?.invalid && (login_type?.dirty || login_type?.touched))">
+            <ul class="inputError mt-1">
+                <li *ngIf="login_type?.errors?.['required']">User Type is Required</li>
+              
+            </ul>
+        
+        </div>
+        </div>
+
+        </div>
+        
+        <div class="form-group mb-4 col-md-6">
+                
+            <input type="text" id="login_id" formControlName="login_id" placeholder="Login ID" class="form-control " >
+    
+            <div *ngIf="isSubmitted||(login_id?.invalid && (login_id?.dirty || login_id?.touched))">
+                <ul class="inputError mt-1">
+                    <li *ngIf="login_id?.errors?.['required']">LoginID is Required</li>
+                   
+                </ul>
+            
+            </div>
+        
+        </div>  
+        
+        
+        
+        <div><button type="submit" class="btn btn-primary marbott btnAdd ">Register</button></div>
+    </form>
+    </div>
+
+    <app-admin-footer></app-admin-footer>

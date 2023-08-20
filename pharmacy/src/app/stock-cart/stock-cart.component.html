@@ -1,0 +1,131 @@
+
+<div class="cartImageContent">
+<img class="img-responsive cartImage" src='assets/images/cart14.png' >
+<div class="cartImageText">
+<h1 class="text-white">Stock Cart</h1>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="container space"   *ngIf="drugStock != '' else other_content ">
+
+   <div class="row">
+
+   <div class=" col-md-12 col-lg-9 scroll">
+
+       <table class="table cartTable">
+      
+           <tbody>
+               
+             <tr *ngFor="let druginfo of drugStock">
+               
+               <td><img src="assets/images/bottlelarge.png" alt="image" class="imageCart"></td>
+               <td>{{druginfo.drugName}}</td>
+               <td>{{druginfo.price}}</td>
+               <td><input type="number" min="1" [value]="druginfo.quantity" (change)="updateCart(druginfo.drugId,$event)" ></td>
+               <td>{{druginfo.total}}</td>
+               <td>
+              <button class="btn btn-danger btnPink" (click)="deleteCart(druginfo.drugId)">Delete</button>
+               </td>
+             </tr>
+          
+           </tbody>
+         </table>
+
+
+   </div>
+
+
+
+
+<div class="col-md-12 col-lg-3 cartCheckoutCOnt" >
+
+
+<div class="containerBackground">
+
+
+<div>
+
+<h2 class="cartText">Cart Totals</h2>
+
+<table class="table invTable">
+      
+   <tbody>
+       
+     <tr>
+       
+       
+       <th class="cartTextTotal">Subtotal:</th>
+       <td>{{sum}} LE</td>
+       
+     </tr>
+
+     <tr>
+       
+       
+       <th class="cartTextTotal">Total:</th>
+       <td class="sumTotalcart">{{sum}} LE</td>
+       
+     </tr>
+     
+   </tbody>
+ </table>
+
+<div class="text-center"><button class="btn btn-danger w-100 btnCheckout" data-bs-toggle="modal" data-bs-target="#check"  (click)="stockOperation()">Check Out</button></div>
+</div>
+
+</div>
+
+
+ 
+</div>
+
+   </div>
+
+    <div class="my-3">
+  
+      <input class="form-control w-50" id="exampleFormControlTextarea1" rows="3" placeholder="description" (change)="textareaValue($event)" >
+    </div>
+
+<!-- Modal -->
+
+<div class="modal fade" id="check" tabindex="-1" aria-labelledby="checkLabel" aria-hidden="true">
+ <div class="modal-dialog modal-dialog-centered">
+   <div class="modal-content">
+     <div class="modal-header">
+       <h1 class="modal-title fs-5" id="checkLabel">Message</h1>
+       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+     </div>
+     <div class="spinnmodal" id="animated-gif">      
+      <span class="spinner"></span>
+    </div>
+     <div class="modal-body">
+      {{msg?.Message}}
+     </div>
+     <div class="modal-footer">
+       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="reload()">Close</button>
+     </div>
+   </div>
+ </div>
+</div>
+
+
+</div>
+
+
+
+
+<ng-template #other_content>
+  
+  <div class="container noCart">
+
+No drug in your cart
+
+  </div>
+</ng-template>

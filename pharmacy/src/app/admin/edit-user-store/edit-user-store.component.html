@@ -1,0 +1,51 @@
+<app-admin-navbar></app-admin-navbar>
+
+
+<div class="animation spinnContainer">      
+    <span class="screenLoaderAdmin"></span>
+  </div>
+
+<div class="container adminT" *ngIf="userstoreData != '' else other_content">
+    <button class="btn btn-primary mt-3 btnAdd" routerLink="/addUserStore" >Add User Store</button>
+
+    <table class="table table-striped table-bordered text-center mt-3">
+        <thead>
+           
+            <th>Store Name</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+    
+        </thead>
+        <tbody>
+            
+            <tr *ngFor="let userstore of userstoreData | paginate:{itemsPerPage: tableSize,currentPage:page,totalItems:count}; let i=index">
+                <td>{{userstore?.store_id.store_name}}</td>
+                <td>{{userstore?.user_id.first_name}}</td>
+                <td>{{userstore?.user_id.last_name}}</td>
+        
+
+             <!-- <td>
+                
+                  
+                    <button class="btn btn-danger" >Delete</button>
+                    <button class="btn btn-success">Edit</button>
+                
+             </td> -->
+            </tr>
+           
+        </tbody>
+    </table>
+    <pagination-controls previousLabel="prev" nextLabel="Next" (pageChange)="onDataChange($event)">
+  
+    </pagination-controls>
+    </div>
+    <ng-template #other_content>
+  
+        <div class="container noData" >
+      
+      No Data Exists
+      
+        </div>
+
+      </ng-template>
+    <app-admin-footer></app-admin-footer>

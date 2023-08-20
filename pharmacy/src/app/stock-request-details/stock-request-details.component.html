@@ -1,0 +1,44 @@
+
+
+
+<div  class="animation spinnContainer">      
+  <span class="screenLoader"></span>
+</div>
+
+<div class="container space stockT" style="margin-bottom: 85px;">
+
+   
+
+    <div>
+
+        <table class="table cartTable">
+       
+            <tbody>
+                
+              <tr *ngFor="let drugs of requestedDrug | paginate:{itemsPerPage: tableSize,currentPage:page,totalItems:count}; let i=index" >
+                <td><img src="assets/images/bottlelarge.png" alt="image" class="imageCart"></td>
+                <td>{{drugs.drug_id. en_brand_name}}</td>
+                <td>{{drugs.request_drug_quantity}}</td>
+                <td>{{drugs.request_status}}</td>
+                
+              </tr>
+            
+            </tbody>
+          </table>
+
+          <pagination-controls previousLabel="prev" nextLabel="Next" (pageChange)="onDataChange($event)">
+  
+          </pagination-controls>
+
+    </div>
+
+
+
+
+
+
+    </div>
+
+
+
+ 

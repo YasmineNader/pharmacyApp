@@ -1,0 +1,122 @@
+
+<div class="categotyCont">
+<img class="img-responsive categoryImageposter"  src="assets/images/dr11.png" alt="image" >
+
+<div  class ="cartImageText">
+<h1 class="text-white">Stock Requests</h1>
+
+
+</div>
+
+
+</div>
+
+
+<div class = "animation spinnContainer">      
+  <span class="screenLoader"></span>
+</div>
+
+<div class="container space stockT"  *ngIf="requestList != '' else other_content">
+
+
+
+    <table class="table purchaseRequest">
+        <thead>
+          <tr>
+
+             <th ></th>
+             <th>Drug Name</th>
+             <th>Quantity</th>
+            
+             <th></th>
+           
+          </tr>
+        </thead>
+        <tbody>
+        
+          <tr *ngFor="let list of requestList | paginate:{itemsPerPage: tableSize,currentPage:page,totalItems:count}; let i=index">
+
+            <td><img src="assets/images/bottlelarge.png" alt="" width="100%"></td>
+            <td>{{list?.drug_id.en_brand_name}}</td>
+            <td>{{list?.request_drug_quantity}}</td>
+           
+            <td><a class="btn btn-danger btnPink" (click)="drugStockAvailability(list.drug_id.id,list.id,list.request_id.store_id,list?.request_drug_quantity)">Availabilty</a></td>
+          </tr>
+   
+        </tbody>
+      </table>
+
+
+      <pagination-controls previousLabel="prev" nextLabel="Next" (pageChange)="onDataChange($event)">
+  
+      </pagination-controls>
+</div>
+
+
+<ng-template #other_content>
+  
+  <div class="container noData">
+
+    No Stock Request AVailable
+
+  </div>
+</ng-template>
+
+<div class="container " id="branchSection">
+<h3 class="text-center branchText">Available Branches</h3>
+
+  <div class="row g-4 justify-content-center" >
+    
+
+    
+    <div class="col-12 col-md-6 col-lg-4" *ngFor="let branch of availabilityData" >
+    <div class="card  branchCard "  (click)="toggleCard($event)" >
+      <div class="frontBranch" >
+        <img src="assets/images/store.jpg" class="card-img-top branchimage" alt="image">
+         <div class="TextBranchImage">
+         <h3 >{{branch.store_id.store_name}}</h3>
+      </div>
+        </div>
+        <div class="cardText backBranch">
+          <form class="purchaseForm"  [formGroup]="stockQuantity" (ngSubmit)="transferDrug(branch.store_id.id)">
+            <div class="mb-3">
+              <input type="number" class="form-control text-center" id="quantity" placeholder="Quantity" min="1" value='1' formControlName="quantity" >
+              <div *ngIf="isSubmitted||(quantity?.invalid && (quantity?.dirty || quantity?.touched))">
+                <ul class="inputError mt-1">
+                    <li *ngIf="quantity?.errors?.['required']">Quantity is Required</li>
+                   
+                </ul>
+            
+            </div>
+            </div>
+         <div class="text-center">
+
+        
+            <button type="submit" class="btn btn-primary btnPink" >Transfer</button>
+             </div>
+          </form>      
+        
+        </div>
+    </div>
+  </div>
+  
+
+
+  <div>
+
+
+
+
+  </div>
+         
+  
+  </div>
+
+</div>
+
+
+<div class="container " id="purchaseBTN">
+<h3 class="text-center branchText">No Available Branches</h3>
+<div class="text-center"><button class="btn btn-primary btnlarge btnPink" (click)="purchaseTransfer()">Purchase Order</button></div>
+</div>
+

@@ -1,0 +1,25 @@
+
+<div *ngIf="Main_frame.visible==true else other_content">
+<div>
+<app-navbar></app-navbar>
+</div>
+<div>
+    <router-outlet></router-outlet>
+
+</div>
+<div>
+<app-footer></app-footer>
+</div>
+
+</div>
+
+
+
+<ng-template #other_content>
+    
+<div>
+    <router-outlet></router-outlet>
+
+</div>
+
+</ng-template> 

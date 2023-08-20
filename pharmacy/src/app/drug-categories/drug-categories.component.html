@@ -1,0 +1,60 @@
+<div class="categotyCont">
+<img src="assets/images/6.jpg" alt="" class = "categoryImageposter" >
+
+<div class="textPoster">
+<h1 class="text-white">{{categoryName}}</h1>
+
+
+</div>
+
+</div>
+
+<div class="animation spinnContainer">      
+  <span class="screenLoader"></span>
+</div>
+
+
+<div class="container space searchContainer"  *ngIf="drugData != '' else other_content">
+
+    <div class="row g-4" >
+      <div class="col-12 col-md-6 col-lg-4" *ngFor="let drug of drugData   | paginate:{itemsPerPage: tableSize,currentPage:page,totalItems:count}; let i=index">
+      <div class="card drugCard" >
+        <div class="catimgCard">
+    <div class="catimgCardCont">
+    
+    <img src="assets/images/boo.png" class="card-img-top cardDrugImg" alt="drug_image">
+    
+    </div>
+    
+      </div>
+        <div class="card-body">
+          <h5 class="card-title">{{drug?.en_brand_name}}</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <div class="text-center">
+         <a href="/drugDetails/{{drug?.id}}" class="btn btn-primary drugCardBtn"> <i class="fa-solid fa-circle-info"></i> Drug View</a>
+        </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    </div>
+    
+    <pagination-controls previousLabel="prev" nextLabel="Next" (pageChange)="onDataChange($event)">
+      
+    </pagination-controls>
+    
+    </div>
+    
+    
+    
+    
+    
+    <ng-template #other_content>
+  
+      <div class="container noData">
+    
+        No item Available
+    
+      </div>
+    </ng-template>

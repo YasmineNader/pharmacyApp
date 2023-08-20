@@ -1,0 +1,55 @@
+
+<div class="categotyCont">
+<img class="img-responsive categoryImageposter"  src="assets/images/dr11.png" alt="image" >
+
+<div class="textPoster">
+<h1 class="text-white">purchase Requests</h1>
+
+
+</div>
+
+</div>
+<div class="animation spinnContainer">      
+  <span class="screenLoader"></span>
+</div>
+
+<div class="container space purchaseT "  *ngIf="requestData != '' else other_content">
+
+<div class="scroll">
+    <table class="table purchaseRequest">
+        <thead>
+          <tr >
+            <th></th>
+            <th>Drug Name</th>
+            <th >Count</th>
+             <th></th>
+           
+          </tr>
+        </thead>
+        <tbody>
+        
+          <tr *ngFor="let Data of requestData | paginate:{itemsPerPage: tableSize,currentPage:page,totalItems:count}; let i=index">
+            <td><img src="assets/images/bottlelarge.png" alt="image" class="imageCart" ></td>
+            <td>{{Data?.drug_id?.en_brand_name}}</td>
+            <td>{{Data?.request_drug_quantity}}</td>
+            <td><button  class="btn btn-danger btnPink"  (click)="purchaseCart(Data?.id)">Add To Cart</button></td>
+                
+          </tr>
+    
+        </tbody>
+      </table>
+      <pagination-controls previousLabel="prev" nextLabel="Next" (pageChange)="onDataChange($event)">
+  
+      </pagination-controls>
+
+</div>
+</div>
+<ng-template #other_content>
+  
+  <div class="container noData">
+
+No Purchase Requests
+
+  </div>
+</ng-template>
+

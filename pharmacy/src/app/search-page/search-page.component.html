@@ -1,0 +1,115 @@
+
+
+<div  class ="searchGif" id="animated-gif">
+
+  <span class="loader" ></span>
+</div>
+
+<div class="position-relative">
+
+    <div class="serchImagePoster" >
+
+
+    </div>
+
+
+
+
+<div class ="serchForm">
+
+
+
+<div  class="contSpace">
+    <h3 class="text-white">Search For Your Request</h3>
+      <hr  class ="searchTit">
+       </div>
+
+       
+    
+      <form  [formGroup]="searchValues" (ngSubmit)="drugSearch()"  id="SearchForm">
+      
+      <div class="row searchContaHome" >
+        <div class="form-group mb-4 col-md-6">
+          <select class="form-select searchType" aria-label="Default select example" formControlName="searchSelect">
+            <option value="en_brand_name" selected>Commercial Name</option>
+            <option value="chemical_name">Chemical Name </option>
+            
+          </select>
+    
+        </div>
+    
+        <div class="form-group mb-4 col-md-6">
+          <div class="col-auto  position-relative h-100 searchinputCont">
+            <input type="text" class="form-control h-100" id="search" formControlName="search" placeholder="Search For Drugs" >
+            <div *ngIf="isSubmitted||(search?.invalid && (search?.dirty || search?.touched))">
+              <ul class="inputError mt-1">
+                  <li *ngIf="search?.errors?.['required']">Drug Name is Required</li>
+                  
+              </ul>
+          
+          </div>
+            
+            <button type="submit" class="btn btn-primary mb-3 searchBtnHome" >Search</button>
+
+          </div>
+    
+        </div>
+    </div>
+    
+    
+
+      </form>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+<div class="container searchContainer" *ngIf="searchResult != '' else other_content">
+
+<div class="row g-4" >
+  <div class="col-12 col-md-6 col-lg-4" *ngFor="let drug of searchResult | paginate:{itemsPerPage: tableSize,currentPage:page,totalItems:count}; let i=index">
+  <div class="card drugCard" >
+    <div  class="catimgCard">
+<div  class="catimgCardCont">
+
+<img src="assets/images/boo.png" class="card-img-top cardDrugImg" alt="drug_image" >
+
+</div>
+
+  </div>
+    <div class="card-body">
+      <h5 class="card-title">{{drug?.en_brand_name}}</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <div class="text-center">
+     <a href="/drugDetails/{{drug?.id}}" class="btn btn-primary drugCardBtn"> <i class="fa-solid fa-circle-info"></i> Drug View</a>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<pagination-controls previousLabel="prev" nextLabel="Next" (pageChange)="onDataChange($event)">
+  
+</pagination-controls>
+
+</div>
+
+
+
+
+
+<ng-template #other_content>
+  
+  <div class="container noData" >
+
+    No Result Found
+
+  </div>
+</ng-template>

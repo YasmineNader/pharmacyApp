@@ -1,0 +1,9 @@
+version: '3.9'
+services: 
+  angular-app:
+    container_name: angular-app
+    build: ./dockerfile
+    volumes:
+      - './:usr/src/app'
+    ports:
+      -'4500:4500' 

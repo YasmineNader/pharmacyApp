@@ -1,0 +1,71 @@
+
+<div class="spinnContainer animation">      
+  <span class="screenLoader"></span>
+</div>
+
+
+<div class="invoiceT mb-5">
+
+
+    
+    <div class="invCon">
+
+    <div>
+    </div>
+        <div class="invIcon">
+            <div class="invConIcon">
+         
+        </div>
+        <div>
+            <div>
+           <div> <p class="invoiceText">INVOICE</p></div>
+            <div class="invoiceData">
+    
+            <div>
+                     <input type="text" class="form-control"  placeholder="Invoice ID" (change)="textareaValue($event)">
+            </div>
+            
+            <div>
+                Amount : <span id="amountSum"></span>
+            </div>
+        </div>
+
+    </div>
+</div>
+        </div>
+    
+    </div>
+
+
+
+ <div class="container">
+    
+  <h6 *ngIf="msg !='' ">{{msg}}</h6>
+
+    <table class="table invoiceTable" >
+        <thead class="thead-dark headstable" >
+          <tr>
+            <th scope="col">NO</th>
+            <th scope="col">Drug</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of sData?.order_drug ; let i = index" >
+           <td><span id="id_{{i}}">{{data.id}}</span></td>
+           <td>{{data.drug_id.en_brand_name}}</td>
+           <td><input class="form-control" type="text" placeholder="Quantity" id="Quantity_{{i}}" aria-label="default input example"></td>
+           <td><input class="form-control" type="text" placeholder="Price" id="Price_{{i}}" aria-label="default input example"></td>
+          </tr>
+        </tbody>
+      </table>
+     <div class="text-end btnContaInv"><button class="btn btn-danger btnPink"  (click)="updateSingleData()">Update</button>
+        <button class="btn btn-danger savebtn" (click)=" invoice()">Save</button></div>
+    </div> 
+      
+ 
+    <div>
+    
+    </div>   
+  </div>

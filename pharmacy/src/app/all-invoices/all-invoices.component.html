@@ -1,0 +1,54 @@
+<div class="cartImageContent" >
+<img class="img-responsive categoryImageposter"  src="assets/images/dr11.png" alt="image">
+
+<div class="textPoster">
+<h1 class="text-white">Invoices</h1>
+
+
+</div>
+
+</div>
+
+<div  class ="spinnContainer animation" >      
+  <span class="screenLoader"></span>
+</div>
+
+<div class="container space purchaseT" *ngIf="orderData != '' else other_content">
+
+
+    <table class="table purchaseRequest">
+        <thead>
+          <tr >
+            <th>Order ID</th>
+            <th>Supplier</th>
+            <th >Drug Count</th>
+            <th>Invoice Number</th>
+            <th>   </th>
+          </tr>
+        </thead>
+        <tbody>
+        
+          <tr *ngFor="let Data of orderData | paginate:{itemsPerPage: tableSize,currentPage:page,totalItems:count}; let i=index">
+            <td>{{Data?.order_id}}</td>
+            <td>{{Data?.supplier_id.supplier_first_name}}</td>
+            <td>{{Data?.order_drug.length}}</td>
+            <td>{{Data?.invoice_number}}</td>
+            <td><a href="/invoicing/{{Data.order_id}}" class="btn btn-danger btnPink">Edit</a></td>
+          </tr>
+    
+        </tbody>
+      </table>
+
+      <pagination-controls previousLabel="prev" nextLabel="Next" (pageChange)="onDataChange($event)">
+  
+      </pagination-controls>
+</div>
+
+<ng-template #other_content>
+  
+  <div class="container noData">
+
+    No Invoices
+
+  </div>
+</ng-template>

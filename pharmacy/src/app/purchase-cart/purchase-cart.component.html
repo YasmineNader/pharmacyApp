@@ -1,0 +1,107 @@
+
+<div class="cartImageContent">
+<img class="img-responsive cartImage" src='assets/images/cart14.png'>
+<div class="cartImageText">
+<h1 class="text-white">Purchase Cart</h1>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="container space"  *ngIf="purchaseData != '' else other_content" >
+
+   <div class="row">
+
+   <div class="col-md-9">
+
+       <table class="table cartTable">
+        <thead class="text-center">
+
+          <th></th>
+          <th>Operation ID</th>
+          <th>Drug ID</th>
+          <th>Order Quantity</th>
+        </thead>
+      
+           <tbody>
+               
+             <tr *ngFor="let data of purchaseData">
+               
+               <td><img src="assets/images/bottlelarge.png" alt="image"  class="imageCart"></td>
+               <td>{{data.request_drug_num}}</td>
+               <td>{{data.drug_id}}</td>
+             
+               <td>{{data.order_quantity}}</td>
+             </tr>
+            
+           </tbody>
+         </table>
+
+
+   </div>
+
+
+
+
+
+<div class="mb-3">
+
+
+  <div class="form-check form-check-inline" *ngFor="let suppliers of supplier">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value={{suppliers.id}} (change)="checked($event,suppliers.id)">
+    <label class="form-check-label" for="inlineRadio1">{{suppliers.supplier_first_name}}</label>
+  </div>
+  
+
+</div>
+
+<div class="mb-3">
+  
+  <input class="form-control w-50" id="exampleFormControlTextarea1" rows="3" placeholder="description" (change)="textareaValue($event)" >
+</div>
+
+
+<div><button class="btn btn-danger btnPink" data-bs-toggle="modal" data-bs-target="#check" (click)="addpurchaseOrder()">Check Out</button></div>
+<!-- Modal -->
+
+<div class="modal fade" id="check" tabindex="-1" aria-labelledby="checkLabel" aria-hidden="true">
+ <div class="modal-dialog modal-dialog-centered">
+   <div class="modal-content">
+     <div class="modal-header">
+       <h1 class="modal-title fs-5" id="checkLabel">Message</h1>
+       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+     </div>
+     <div class="spinnmodal" id="animated-gif">      
+      <span class="spinner"></span>
+    </div>
+     <div class="modal-body">
+      {{msg?.Message}}
+    
+    </div>
+     <div class="modal-footer">
+       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+     </div>
+   </div>
+ </div>
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<ng-template #other_content>
+  
+  <div class="container noCart" >
+
+No drug in your cart
+
+  </div>
+</ng-template>

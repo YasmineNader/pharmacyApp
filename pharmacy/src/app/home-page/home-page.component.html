@@ -1,0 +1,354 @@
+
+
+
+
+  <!-- Start carousel -->
+  <div class="position-relative">
+    <img src="assets/images/drugpills.jpg" class="d-block w-100 homeImage" alt="img2">
+
+
+  </div>
+
+  <!-- End carousel -->
+
+
+  <!-- End Category Section -->
+
+
+  
+    <div class="container space">
+
+     <div class="row justify-content-center">
+      <div class="col-md-12 col-lg-7 block first">
+        <div class="divChart">
+          <h5  class ="charTitle">Sales OverView</h5>
+          <canvas id="myChart" ></canvas>
+        
+        </div>
+    </div>
+              
+      <div class="col-md-12 col-lg-3" id="counterSection">
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-12 block second">
+            <div class="divChart">
+              <h5 class="charTitlesmall">Sales Count</h5>
+              <div class="centerchart" >
+
+                <div class="countChart">
+                  <p id="salesCount" >0</p>
+                </div>
+                 </div>
+            </div>      
+          
+          </div>
+          <div class="col-md-6 col-lg-12 block third">
+            <div class="divChart" >
+              <h5  class="charTitlesmall">Sales Amount</h5>
+              <div class="centerchart">
+
+                <div class="countChart">
+                  <p id="salesAmount" >0</p>
+                </div>
+                    </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    
+   <div class="container">
+    <h2 class="drugShortText">Drug Shortages</h2>
+    <owl-carousel-o [options]="customOptions" >
+
+
+      <ng-template carouselSlide *ngFor="let short of drugShorts">
+        
+        <div  class="drugShorts">
+          <img src="assets/images/vitamin.jpg" alt="">
+          <p class="outofstock" *ngIf="short.store_quantity == 0">Out Of Stock</p>
+      
+          <div class="overlayShortage">
+            <div  class="overlayShortagecontent">
+            <p>{{short.drug_id.en_brand_name}}</p>
+            <p>Stock Quantity : {{short.store_quantity}}</p>
+            <a href="drugDetails/{{short.drug_id.id}}" class="btn btn-danger btnPink">Send Request</a>
+          </div>
+
+          </div>
+      </div>
+      
+      </ng-template>  
+      
+    </owl-carousel-o>
+    
+    
+    
+    
+    </div>
+
+
+
+
+
+
+<div class="container mt-5" >
+  <div class="row g-4 justify-content-around">
+
+  
+
+<div class="col-md-12 col-lg-5 divChartTable">
+
+  <h5 class="dispenseTitle">Requested Products</h5>
+  <div class="container">
+
+  <select (change)="onrequestChange($event)">
+
+    <option *ngFor="let size of table">
+  
+      {{size}}
+    </option>
+
+  </select>
+  </div>
+  <div id= "animate" class="text-center">
+    <span class="load"></span>
+  </div>
+  <div class="stockTable" >
+  <table class="table text-center">
+    <thead>
+      <tr>
+        <th scope="col">Drug Name</th>
+        <th scope="col">Status</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Created</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let req of requestedDrugs | paginate:{itemsPerPage: tableSiz,currentPage:pages,totalItems:counts}; let i=index">
+        
+        <td>{{req.drug_id.en_brand_name}}</td>
+        <td><button class="btn btn-danger btnPink">{{req.request_status}}</button> </td>
+        <td>{{req.request_drug_quantity}}</td>
+        <td>{{req.created_at |date:'dd-MM-yyyy'}}</td>
+      </tr>
+   
+     
+    </tbody>
+  </table>
+
+</div>
+</div>
+
+
+
+
+<div class="col-md-12 col-lg-5 divChartTable">
+
+  <h5 class="dispenseTitle">Dispensing Table</h5>
+  <div class="container">
+
+<select (change)="onDataChange($event)">
+
+  <option *ngFor="let size of tableSizes">
+
+    {{size}}
+  </option>
+</select>
+
+  </div>
+  
+  <div id= "animated" class="text-center">
+    <span class="load"></span>
+  </div>
+
+<div class="dispenseTable" >
+  <table class="table text-center" >
+    
+    <thead>
+      <tr>
+        <th scope="col">Sold_Quantity</th>
+        <th scope="col">Total_Price</th>
+        <th scope="col">Created</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+ 
+
+    <tbody *ngFor="let dispense of dispenseList | paginate:{itemsPerPage: tableSize,currentPage:page,totalItems:count}; let i=index"    >
+      
+        
+      <tr  *ngFor="let dispenseDetails of dispense?.dispensing_drug ">
+
+        
+
+        <td >{{dispenseDetails?.sold_quantity}}</td>
+        <td>{{dispense?.total_price}}</td>
+        <td>{{dispense?.created_at |date:'dd-MM-yyyy'}}</td>
+        <td> <button class="btn btn-danger btnPink" id="dispense" data-bs-toggle="modal" data-bs-target="#check" (click)="findDispense(dispense?.id)">Details</button></td>
+      </tr>
+     
+
+    </tbody>
+  </table>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+</div>
+
+
+  <!-- Start Counting Section -->
+
+  
+
+
+
+
+  <!-- Start Category Section -->
+  <div class="container" id="categorySection">
+
+    <h3 class="text-center titleCat">What You Need</h3>
+    <div class="row g-4 justify-content-evenly">
+      <div class="card p-0 cardContainer"  *ngFor="let category of categoryInfo">
+        <img src="assets/images/{{category?.class_name}}.png" class="card-img-top cardImg" alt="category_image">
+        <div class="cardText">
+          <h5 class="card-title cartName">{{category.class_name}}</h5>
+        </div>
+        <div class="cardBtn">
+          <a href="category/{{category?.id}}/{{category?.class_name}}" class="btn btn-primary catBtn">Shop</a>
+        </div>
+      </div>
+      
+    </div>
+
+  </div>
+
+
+
+<!-- start search section -->
+  <div id="searchSeaction">
+
+  <div class="searchTextCont" >
+<h3 class="text-white" >Search For Your Request</h3>
+  <hr id="searchText">
+   </div>
+
+  <form [formGroup]="searchValues" (ngSubmit)="drugSearch()" id="searchInputs">
+  
+  <div class="row searchContaHome" >
+    <div class="form-group mb-4 col-md-12 col-lg-6" id="searchSelect">
+      <select class="form-select searchType" aria-label="Default select example" formControlName="searchSelect">
+        <option value="en_brand_name" selected>Commercial Name</option>
+        <option value="chemical_name">Chemical Name</option>
+   
+      </select>
+
+    </div>
+
+    <div class="form-group mb-4 col-md-12 col-lg-6 " id="SearchInput" >
+      <div class="col-auto position-relative h-100">
+        <input type="text" class="form-control h-100" id="search" placeholder="Search For Drugs" formControlName="search">
+        
+        <div *ngIf="isSubmitted||(search?.invalid && (search?.dirty || search?.touched))">
+          <ul class="inputError mt-1">
+              <li *ngIf="search?.errors?.['required']">Drug Name is Required</li>
+              
+          </ul>
+      
+      </div>
+
+        <button type="submit" class="btn btn-primary mb-3 searchBtnHome">Search</button>
+  
+      </div>
+
+    </div>
+</div>
+
+
+  </form>
+
+  </div>
+
+
+<!-- End search section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+
+<div class="modal fade" id="check" tabindex="-1" aria-labelledby="checkLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="checkLabel">Dispense Number : {{DispenseData?.id}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div id="animated-gif">      
+        <span class="spinner"></span>
+      </div>
+      <div class="modal-body dispenseModel">
+ 
+        <table class="table">
+          <thead>
+            <tr>
+          
+              <th scope="col">Drug Name</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let dispenseDrug of DispenseData?.dispensing_drug">
+            <tr >
+              <td>{{dispenseDrug?.drug_id?.en_brand_name}}</td>
+              <td>{{dispenseDrug?.sold_quantity}}</td>
+              <td>{{dispenseDrug?.sell_price}}</td>
+            </tr>
+       
+          </tbody>
+        </table> 
+      
+        <h6 class="text-secondary text-end">Created: {{DispenseData?.created_at | date:'dd-MM-yyyy'}}</h6>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+ </div>
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+

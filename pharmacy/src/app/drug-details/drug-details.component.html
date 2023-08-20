@@ -1,0 +1,164 @@
+
+<div class="container drugInfo">
+
+
+<div class="row">
+
+<div class="col-md-12 col-lg-6">
+
+<div class="drugInfoimage" >
+
+<img src="assets/images/bottlelarge.png" alt="" width="100%">
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="col-md-12 col-lg-6 alldrugDet">
+
+<div>
+  <h3>{{drugInfo?.en_brand_name}}</h3>
+  <p class="detailsInforCon">Lorem ipsum dolor sit,amet consectetur adipisicing elit.Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+
+  <p class="priceDetails">{{price}} LE</p>
+
+
+<form action="">
+  <hr>
+
+  <div class="row g-3 align-items-center mb-4">
+    <div class="col-auto">
+      <label for="quantity" class="col-form-label font-weight-bold">Quantity:</label>
+    </div>
+    <div class="col-auto">
+      <input type="number" id="quantity" class="form-control text-center" min="1" value='1' (change)="inputValue($event)">
+    </div>
+
+  </div>
+
+
+</form>
+
+<div >
+<button  (click)="addDispenseCart()" class="btn btn-danger dispenseBTN"><i class="fa-solid fa-bag-shopping"></i>  Dispensing Cart</button>
+
+<button (click)="addStockCart()" class="btn btn-danger StockBTN" ><i class="fa-solid fa-basket-shopping"></i> Stock Cart</button>
+</div>
+
+<hr>
+
+<div class="row g-3 align-items-center mb-4">
+  <div class="col-auto">
+    <label for="quantity"   class="font-weight-bold">Categories:</label>
+  </div>
+  <div class="col-auto">
+    <span>Medicine</span>
+  </div>
+
+</div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+<div class="container" class="drugimportInfo">
+
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" >
+      <li class="nav-item navtabs" role="presentation">
+        <button class="nav-link active" id="pills-description-tab" data-bs-toggle="pill" data-bs-target="#pills-description" type="button" role="tab" aria-controls="pills-description" aria-selected="true">Description</button>
+      </li>
+      <li class="nav-item navtabs" role="presentation">
+        <button class="nav-link" id="pills-details-tab" data-bs-toggle="pill" data-bs-target="#pills-details" type="button" role="tab" aria-controls="pills-details" aria-selected="false">Additional Information</button>
+      </li>
+      
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab" tabindex="0">
+
+
+
+
+<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex amet dolorum nemo dolorem laboriosam similique expedita, voluptate praesentium, explicabo tempore numquam voluptatum ducimus totam provident reprehenderit placeat quia, cupiditate quaerat?</div>
+
+
+
+
+
+
+      </div>
+      <div class="tab-pane fade" id="pills-details" role="tabpanel" aria-labelledby="pills-details-tab" tabindex="0">
+
+
+
+
+
+
+
+
+
+        <table class="table table-striped">
+      
+          <tbody>
+            <tr>
+              <th >Drug Name</th>
+              <td>{{drugInfo?.en_brand_name}}</td>
+            </tr>
+            <tr>
+              <th>Chemical Name</th>
+              
+              <td>{{drugInfo?.chemical_name}}</td>
+            </tr>
+            <tr>
+              <th >Dose</th>
+              <td>{{drugInfo?.drug_dose}}</td>
+            
+            </tr>
+            <tr>
+              <th >Usage For</th>
+              <td>{{drugInfo?.drug_usage}}</td>
+            
+            </tr>
+            <tr>
+              <th >National Code</th>
+              <td>{{drugInfo?.national_code}}</td>
+            
+            </tr>
+            <tr>
+              <th >Manufacture</th>
+              <td>{{drugInfo?.manufacture}}</td>
+            
+            </tr>
+        
+            <tr>
+              <th >Price</th>
+              <td>{{price}} LE</td>
+            
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+    </div>
+  
+  
+  </div>

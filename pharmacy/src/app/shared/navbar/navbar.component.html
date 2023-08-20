@@ -1,0 +1,258 @@
+<!-- <div style="background-color: #d5aaaa;">
+
+<div >
+
+<div style="width: 100%;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;">
+
+<img src="assets/images/landing.png" alt="" width=" 80%;">
+
+
+<div style="left: 12%;
+    position: absolute;
+    top: 5%;">
+
+    <img src="assets/images/logo.png" alt="logo" width="40%">
+</div>
+
+<div style="   position: absolute;
+top: 46%;
+width: 35%;
+left: 12%;">
+    
+   <div>
+    <p style="line-height: 2;text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ab quae fuga nesciunt officiis cupiditate dolor deserunt magnam sapiente enim ipsa totam dicta, dolore labore. A nesciunt aspernatur ratione recusandae.</p>
+</div>
+    <div>
+    <button class="btn btn-primary" style="width: 25%;background-color: #7e417e;border: none;">Let's Start</button>
+     </div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+
+ -->
+
+
+
+<!-- <div style="background-color: #d5aaaa;">
+ <div style="width: 100%;
+ height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;">
+    <img src="assets/images/landing.png" alt="" width=" 80%;"> 
+    
+    <div style="left: 12%;
+    position: absolute;
+    top: 5%;">
+
+    <img src="assets/images/logo.png" alt="logo" width="40%">
+</div>
+
+
+<div style="position: absolute;bottom: 42% ;width: 27%;">
+    <p style="line-height: 2;text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ab quae fuga nesciunt officiis cupiditate dolor deserunt magnam sapiente enim ipsa totam dicta, dolore labore. A nesciunt aspernatur ratione recusandae.</p>
+</div>
+    <div style="position: absolute;bottom: 32%;
+    width: 40%;">
+    <button class="btn btn-primary" style="width: 25%;background-color: #7e417e;border: none;">Let's Start</button>
+     </div>
+
+
+  </div>
+</div> -->
+
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary ">
+    <div class="container-fluid">
+      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+      <img src="assets/images/logo.png" alt="logo" style="    background: white;
+      
+      border-radius: 30%; width: 100px;">
+      
+      <div  style="color: white;margin-left: 30px;">
+
+        <div class="nav-item dropdown" style="list-style: none;">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="display: inline-block;margin-right: 30px;">
+            <i class="fa-solid fa-user" style="margin-right: 10px;"></i>
+            <span>Welcome {{getsession.Name}}</span>
+          </a>
+          <!-- <a href=""  style="color: white;"><i class="fa-solid fa-bell"></i> </a> -->
+
+
+          <div style="margin-left: 45px;">
+            {{getsession.Store}}
+         </div>
+
+         
+          <ul class="dropdown-menu"> 
+            
+            <li>
+              
+              <a class="dropdown-item" href="#" style="    text-align: center;" (click)="logOut()">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span >LogOut</span>
+              </a >
+            </li>
+           
+          </ul>
+
+
+        </div>
+
+
+
+    </div>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item" *ngIf="getsession.userType == 'pharmacist'">
+            <a class="nav-link hyperNavlogo" aria-current="page" href="/home">
+              <i class="fa-solid fa-house-chimney navLogos"></i>
+                <span class = "menuItemName " style="color: white;">Home</span>
+            </a>
+          </li>
+          
+          <li class="nav-item" style="position: relative;" *ngIf="getsession.userType == 'pharmacist'" >
+            <a class="nav-link hyperNavlogo" aria-current="page" href="/dispensing/cart">
+              <i class="fa-solid fa-cart-shopping navLogos"></i>
+              <span class = "menuItemName " style="color: white;">Dispense<span class="badge badge-light"  id="counterDispense">{{count}}</span></span>
+
+            </a>
+          </li>
+          <li class="nav-item" *ngIf="getsession.userType == 'pharmacist'">
+            <a class="nav-link hyperNavlogo" href="/search">
+              <i class="fa-solid fa-magnifying-glass navLogos"></i>
+              <span class = "menuItemName " style="color: white;">Search</span>
+          </a>
+          </li>
+
+      
+          
+          <li class="nav-item" *ngIf="getsession.userType == 'stockkeeper' ">
+            <a class="nav-link hyperNavlogo" href="/requestedDrugs">
+               <i class="fa-solid fa-list navLogos "></i>
+             
+              <span class = "menuItemName " style="color: white;">Stock Requests</span>
+          </a>
+          </li>
+
+          <li class="nav-item" *ngIf="getsession.userType == 'purchaser' ">
+            <a class="nav-link hyperNavlogo" href="/purchase/request">
+               <i class="fa-solid fa-list navLogos "></i>
+             
+              <span class = "menuItemName " style="color: white;">Requests</span>
+          </a>
+          </li>
+
+
+          <li class="nav-item" *ngIf="getsession.userType == 'stockkeeper' ">
+            <a class="nav-link hyperNavlogo" href="/allTransfer">
+              <i class="fa-solid fa-right-left navLogos"></i>
+             
+              <span class = "menuItemName " style="color: white;">All Transfer</span>
+          </a>
+          </li>
+
+          <li class="nav-item" *ngIf="getsession.userType == 'stockkeeper' ">
+            <a class="nav-link hyperNavlogo" href="/stock/request">
+               <!-- <i class="fa-solid fa-list navLogos "></i> -->
+               <i class="fa-solid fa-sheet-plastic navLogos"></i>
+              <span class = "menuItemName " style="color: white;">All Requests</span>
+          </a>
+          </li>
+
+          <!-- <li class="nav-item" *ngIf="getsession.userType == 'purchaser' ">
+            <a class="nav-link hyperNavlogo" href="/allPurchasesOrder">
+               <i class="fa-solid fa-sheet-plastic navLogos"></i>
+              <span class = "menuItemName " style="color: white;">All Orders</span>
+          </a>
+          </li> -->
+
+
+          <li class="nav-item" *ngIf="getsession.userType == 'purchaser' ">
+            <a class="nav-link hyperNavlogo" href="/allinvoices">
+               <i class="fa-solid fa-receipt navLogos"></i>
+              <span class = "menuItemName " style="color: white;">Invoices</span>
+          </a>
+          </li>
+          <!-- <li class="nav-item dropdown cartLi">
+            <a class="nav-link dropdown-toggle hyperNavlogo" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-cart-shopping navLogos"></i>
+              <span class = "menuItemName " style="color: white;">Carts <span class="badge badge-light"  id="counter">{{count}}</span></span>
+
+          </a>
+            <ul class="dropdown-menu subMenu" >
+              <li><a class="dropdown-item" href="/dispensing/cart">Dispensing Cart</a></li>
+              <li><a class="dropdown-item" href="/stock/cart">Stock Cart</a></li>
+    
+            </ul>
+          </li> -->
+   
+
+
+
+          <li class="nav-item" style="position: relative;" *ngIf="getsession.userType == 'pharmacist'" >
+            <a class="nav-link hyperNavlogo" aria-current="page" href="/stock/cart">
+              <!-- <i class="fa-solid fa-cart-shopping navLogos"></i> -->
+              <i class="fa-solid fa-cart-shopping navLogos"></i>
+              <span class = "menuItemName " style="color: white;">Stock<span class="badge badge-light"  id="counter">{{countstock}}</span></span>
+
+            </a>
+          </li>
+       
+
+          <li class="nav-item" style="position: relative;" *ngIf="getsession.userType == 'purchaser'" >
+            <a class="nav-link hyperNavlogo" aria-current="page" href="/purchase/cart">
+              <!-- <i class="fa-solid fa-cart-shopping navLogos"></i> -->
+              <i class="fa-solid fa-cart-shopping navLogos"></i>
+              <span class = "menuItemName " style="color: white;">Purchase<span class="badge badge-light"  id="purchaseCount">{{purchaseCount}}</span></span>
+
+            </a>
+          </li>
+
+
+          <!-- <li class="nav-item" style="position: relative;" *ngIf="getsession.userType == 'pharmacist'" >
+            <a class="nav-link hyperNavlogo" aria-current="page" href="https://app.powerbi.com/groups/me/reports/53e30f24-d807-47b0-b585-af7a5005a40f/ReportSection?ctid=77255288-5298-4ea5-81aa-a13e604c30ac&experience=power-bi">
+              <i class="fa-regular fa-file-lines navLogos"></i>
+              
+              <span class = "menuItemName " style="border: none;color: white;">Reports</span>
+              
+            </a>
+          </li> -->
+          <li class="nav-item dropdown cartLi" *ngIf="getsession.userType == 'pharmacist'" >
+            <a class="nav-link dropdown-toggle hyperNavlogo" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-regular fa-file-lines navLogos"></i>
+              <span class = "menuItemName " style="border: none;color: white;">Reports</span>
+
+          </a>
+            <ul class="dropdown-menu subMenu">
+              <li><a class="dropdown-item" href="report/sales">Sales Store</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+    
+        </ul>
+        <!-- <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> -->
+      </div>
+    </div>
+  </nav>
+
+
+
+ 

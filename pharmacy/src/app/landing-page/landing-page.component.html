@@ -1,0 +1,45 @@
+<!-- Start login and layout Section -->
+<div  id="loginForm" class="" #loginForm>
+
+    <div class="loginmsg" >
+    
+    
+        <div *ngIf="msg!=null" class="alert alert-danger" role="alert">
+            {{msg.Message}}
+         </div> 
+ 
+    <app-login (newItemEvent)="HideOverlay($event)" (buttonClickEvent)="startButtonClick($event)" [isFormOpened]="isFormOpened" [clickedOpen]="clickedOpen"></app-login>
+   
+    </div>
+    </div>
+
+    <!-- End login and layout Section -->
+
+
+
+
+  <!-- Start login and layout Landing Page -->  
+<div class="layoutLanding" >
+
+<div class="landingpageCard" >
+
+    <img src="assets/images/landingPage11.png"  class="layoutimage">
+
+
+<div class="textContLanding">
+    
+   <div>
+    <h4>Drug Store</h4>
+    <p class='paraglanding'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ab quae fuga nesciunt officiis cupiditate dolor deserunt magnam sapiente enim ipsa totam dicta, dolore labore. A nesciunt aspernatur ratione recusandae.</p>
+</div>
+    <div>
+    <button class="btn btn-primary " (click)="openLoginPage()"  id="btnLanding">Let's Start</button>
+     </div>
+</div>
+
+</div>
+
+</div>
+
+<!-- End login and layout Landing Page --> 
+

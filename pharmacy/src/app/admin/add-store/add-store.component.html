@@ -1,0 +1,93 @@
+<app-admin-navbar></app-admin-navbar>
+
+
+<div class="container adminContainer">
+
+    <h3 class="formTitle">Store Form</h3>
+    <h6 *ngIf="msg !='' ">{{msg?.message}}</h6>
+
+    <form class="registerForm" [formGroup]="stores" (ngSubmit)="addStore()">
+     
+<div class=" row">
+<div class="form-group mb-4 col-md-6">
+            
+ <input type="text" id="storeName"  formControlName="store_name" placeholder="Store Name" class="form-control"  >
+
+ <div *ngIf="isSubmitted||(store_name?.invalid && (store_name?.dirty || store_name?.touched))">
+    <ul class="inputError mt-1">
+        <li *ngIf="store_name?.errors?.['required']">Store Name is Required</li>
+        <li *ngIf="store_name?.errors?.['minlength']">Store Name less than 3 char</li>
+        <li *ngIf="store_name?.errors?.['maxlength']">Store Name Exceeds 20 char</li>
+    </ul>
+
+</div>
+
+</div> 
+
+<div class=" form-group mb-4 col-md-6">
+    <input type="text" id="storeRegion"  formControlName="store_reg_no" placeholder="Store region" class="form-control"  >
+    <div *ngIf="isSubmitted||(store_reg_no?.invalid && (store_reg_no?.dirty || store_reg_no?.touched))">
+        <ul class="inputError mt-1">
+            <li *ngIf="store_reg_no?.errors?.['required']">Store Region is Required</li>
+            <li *ngIf="store_reg_no?.errors?.['minlength']">Store Region less than 3 char</li>
+            <li *ngIf="store_reg_no?.errors?.['maxlength']">Store Region Exceeds 20 char</li>
+        </ul>
+    
+    </div>
+
+</div>
+
+
+
+</div>
+
+
+
+<div  class=" row">
+ <div  class=" form-group mb-4 col-md-6">
+    
+    <div class=" form-group mb-4">
+        <input type="text" id="location" formControlName="store_location" placeholder="Location"
+        class="form-control"  >
+        <div *ngIf="isSubmitted||(store_location?.invalid && (store_location?.dirty || store_location?.touched))">
+            <ul class="inputError mt-1">
+                <li *ngIf="store_location?.errors?.['required']">Location is Required</li>
+                <li *ngIf="store_location?.errors?.['minlength']">location less than 3 char</li>
+                <li *ngIf="store_location?.errors?.['maxlength']">location Exceeds 20 char</li>
+            </ul>
+        
+        </div>
+    </div>
+        
+        </div>
+
+
+
+        <div  class=" form-group mb-4 col-md-6">
+    
+            <div class=" form-group mb-4">
+                <input type="text" id="phone" formControlName="store_phone1" placeholder="Phone"
+                class="form-control"  >
+                <div *ngIf="isSubmitted||(store_phone1?.invalid && (store_phone1?.dirty || store_phone1?.touched))">
+                    <ul class="inputError mt-1">
+                        <li *ngIf="store_phone1?.errors?.['required']">Phone is Required</li>
+                        <li *ngIf="store_phone1?.errors?.['pattern']">Invalid Phone</li>
+                      
+                    </ul>
+                
+                </div>
+            </div>
+                
+                </div>
+        </div>
+        
+ 
+        
+        
+
+        
+        <div><button type="submit" class="btn btn-primary marbott btnAdd">Add</button></div>
+    </form>
+    </div>
+
+    <app-admin-footer></app-admin-footer>

@@ -1,0 +1,55 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="animation spinnContainer">      
+  <span class="screenLoaderAdmin"></span>
+</div>
+
+<div class="container adminT" *ngIf="categoryInfo != '' else other_content">
+    <button class="btn btn-primary mt-3 btnAdd" routerLink="/addClass" >Add Class</button>
+
+    <table class="table table-striped table-bordered text-center mt-3">
+        <thead>
+            <th>id</th>
+            <th>Category</th>
+            
+            <th></th>
+        </thead>
+        <tbody>
+            
+            <tr *ngFor="let category of categoryInfo | paginate:{itemsPerPage: tableSize,currentPage:page,totalItems:count}; let i=index">
+                <td>{{category?.id}}</td>
+                <td>{{category?.class_name}}</td>
+           
+
+              <td>
+                
+                  
+                    <!-- <button class="btn btn-danger" >Delete</button> -->
+                    <a href="editClass/{{category?.id}}" class="btn btn-success editButton">Edit</a>
+                
+             </td> 
+            </tr>
+           
+        </tbody>
+    </table>
+    <pagination-controls previousLabel="prev" nextLabel="Next" (pageChange)="onDataChange($event)">
+  
+    </pagination-controls>
+    </div>
+
+
+
+    <ng-template #other_content>
+  
+        <div class="container noData" >
+      
+      No Classes Exist
+      
+        </div>
+
+      </ng-template>
+       
+      
+    <app-admin-footer></app-admin-footer>
+
+

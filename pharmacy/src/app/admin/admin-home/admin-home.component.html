@@ -1,0 +1,99 @@
+<!-- <app-admin-navbar></app-admin-navbar>
+
+
+<div class="container">
+
+    <h3 class="formTitle">Registration Form</h3>
+    <form class="registerForm" [formGroup]="register" (ngSubmit)="userValue()">
+     
+<div class=" row">
+<div class="form-group mb-4 col-md-6">
+            
+ <input type="text" id="firstName"  formControlName="firstName" placeholder="First Name" class="form-control"  >
+
+ <div *ngIf="isSubmitted||(firstName?.invalid && (firstName?.dirty || firstName?.touched))">
+    <ul class="inputError mt-1">
+        <li *ngIf="firstName?.errors?.['required']">First Name is Required</li>
+        <li *ngIf="firstName?.errors?.['minlength']">First Name less than 3 char</li>
+        <li *ngIf="firstName?.errors?.['maxlength']">First Name Exceeds 20 char</li>
+    </ul>
+
+</div>
+
+</div>   
+
+<div class="form-group mb-4 col-md-6">
+    
+    <input type="text" id="lastName" formControlName="lastName" placeholder="Last Name" class="form-control " >
+
+    <div *ngIf="isSubmitted||(lastName?.invalid && (lastName?.dirty || lastName?.touched))">
+        <ul class="inputError mt-1">
+            <li *ngIf="lastName?.errors?.['required']">Last Name is Required</li>
+            <li *ngIf="lastName?.errors?.['minlength']">Last Name less than 3 char</li>
+            <li *ngIf="lastName?.errors?.['maxlength']">Last Name Exceeds 20 char</li>
+        </ul>
+    
+    </div>
+</div>
+
+
+</div>
+
+<div class=" form-group mb-4">
+    <input type="email" id="email" aria-describedby="emailHelp" formControlName="email" placeholder="Email" class="form-control"  >
+    <div *ngIf="isSubmitted||(email?.invalid && (email?.dirty || email?.touched))">
+        <ul class="inputError mt-1">
+            <li *ngIf="email?.errors?.['required']">Email is Required</li>
+            <li *ngIf="email?.errors?.['email']">Invalid Email</li>
+           
+        </ul>
+    
+    </div>
+
+</div>
+
+<div  class=" row">
+ <div  class=" form-group mb-4 col-md-6">
+    
+    <div class=" form-group mb-4">
+        <input type="password" id="password" formControlName="password" placeholder="Password"
+        class="form-control"  >
+        <div *ngIf="isSubmitted||(password?.invalid && (password?.dirty || password?.touched))">
+            <ul class="inputError mt-1">
+                <li *ngIf="password?.errors?.['required']">Password is Required</li>
+                <li *ngIf="password?.errors?.['minlength']">Password less than 6 char</li>
+                <li *ngIf="password?.errors?.['maxlength']">Password Exceeds 15 char</li>
+            </ul>
+        
+        </div>
+    </div>
+        
+        </div>
+        <div  class=" form-group mb-4 col-md-6">
+        <select class="form-select" aria-label="Default select example" formControlName="userType">
+            <option selected>User Type</option>
+            <option value="admin">Admin</option>
+            <option value="pharmacist">Pharmacist</option>
+            <option value="stockkeeper">Stockkeeper</option>
+            <option value="purchaser">Purchaser</option>
+          </select>
+          <div *ngIf="isSubmitted||(userType?.invalid && (userType?.dirty || userType?.touched))">
+            <ul class="inputError mt-1">
+                <li *ngIf="userType?.errors?.['required']">User Type is Required</li>
+              
+            </ul>
+        
+        </div>
+        </div>
+
+        </div>
+        
+ 
+        
+        
+        
+        <div><button type="submit" class="btn btn-primary">Register</button></div>
+    </form>
+    </div>
+
+    <app-admin-footer></app-admin-footer> -->
